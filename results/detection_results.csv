@@ -1,201 +1,201 @@
-ID,IP,Status,Attack Type,Risk
-1,192.168.0.1,Normal,None,7
-2,192.168.0.2,Normal,None,26
-3,192.168.0.3,Attack,Neptune,77
-4,192.168.0.4,Normal,None,14
-5,192.168.0.5,Normal,None,15
-6,192.168.0.6,Normal,None,22
-7,192.168.0.7,Attack,Back,68
-8,192.168.0.8,Attack,Neptune,93
-9,192.168.0.9,Attack,Teardrop,61
-10,192.168.0.10,Attack,Teardrop,70
-11,192.168.0.11,Attack,Neptune,89
-12,192.168.0.12,Normal,None,22
-13,192.168.0.13,Attack,Teardrop,76
-14,192.168.0.14,Normal,None,11
-15,192.168.0.15,Normal,None,10
-16,192.168.0.16,Normal,None,28
-17,192.168.0.17,Attack,Teardrop,83
-18,192.168.0.18,Normal,None,27
-19,192.168.0.19,Normal,None,8
-20,192.168.0.20,Normal,None,16
-21,192.168.0.21,Normal,None,5
-22,192.168.0.22,Normal,None,12
-23,192.168.0.23,Normal,None,11
-24,192.168.0.24,Normal,None,24
-25,192.168.0.25,Normal,None,9
-26,192.168.0.26,Normal,None,13
-27,192.168.0.27,Normal,None,7
-28,192.168.0.28,Attack,Neptune,79
-29,192.168.0.29,Normal,None,7
-30,192.168.0.30,Normal,None,29
-31,192.168.0.31,Normal,None,23
-32,192.168.0.32,Normal,None,2
-33,192.168.0.33,Normal,None,16
-34,192.168.0.34,Normal,None,9
-35,192.168.0.35,Normal,None,9
-36,192.168.0.36,Normal,None,14
-37,192.168.0.37,Attack,Teardrop,82
-38,192.168.0.38,Normal,None,20
-39,192.168.0.39,Normal,None,18
-40,192.168.0.40,Attack,Neptune,85
-41,192.168.0.41,Normal,None,3
-42,192.168.0.42,Normal,None,8
-43,192.168.0.43,Attack,Neptune,75
-44,192.168.0.44,Normal,None,24
-45,192.168.0.45,Attack,Smurf,81
-46,192.168.0.46,Normal,None,3
-47,192.168.0.47,Normal,None,18
-48,192.168.0.48,Attack,Neptune,93
-49,192.168.0.49,Normal,None,23
-50,192.168.0.50,Normal,None,12
-51,192.168.0.51,Normal,None,23
-52,192.168.0.52,Attack,Smurf,73
-53,192.168.0.53,Attack,Back,63
-54,192.168.0.54,Normal,None,12
-55,192.168.0.55,Normal,None,14
-56,192.168.0.56,Normal,None,14
-57,192.168.0.57,Normal,None,18
-58,192.168.0.58,Normal,None,19
-59,192.168.0.59,Normal,None,2
-60,192.168.0.60,Normal,None,10
-61,192.168.0.61,Attack,Back,68
-62,192.168.0.62,Normal,None,2
-63,192.168.0.63,Attack,Back,84
-64,192.168.0.64,Normal,None,3
-65,192.168.0.65,Attack,Neptune,70
-66,192.168.0.66,Normal,None,18
-67,192.168.0.67,Normal,None,12
-68,192.168.0.68,Normal,None,2
-69,192.168.0.69,Normal,None,26
-70,192.168.0.70,Attack,Smurf,91
-71,192.168.0.71,Normal,None,28
-72,192.168.0.72,Normal,None,12
-73,192.168.0.73,Attack,Teardrop,81
-74,192.168.0.74,Normal,None,2
-75,192.168.0.75,Attack,Back,87
-76,192.168.0.76,Normal,None,3
-77,192.168.0.77,Normal,None,9
-78,192.168.0.78,Attack,Neptune,81
-79,192.168.0.79,Attack,Teardrop,88
-80,192.168.0.80,Normal,None,13
-81,192.168.0.81,Normal,None,25
-82,192.168.0.82,Normal,None,25
-83,192.168.0.83,Normal,None,7
-84,192.168.0.84,Normal,None,8
-85,192.168.0.85,Attack,Back,81
-86,192.168.0.86,Normal,None,8
-87,192.168.0.87,Attack,Teardrop,79
-88,192.168.0.88,Attack,Teardrop,73
-89,192.168.0.89,Attack,Back,90
-90,192.168.0.90,Attack,Neptune,74
-91,192.168.0.91,Normal,None,16
-92,192.168.0.92,Normal,None,2
-93,192.168.0.93,Attack,Back,61
-94,192.168.0.94,Normal,None,1
-95,192.168.0.95,Attack,Teardrop,62
-96,192.168.0.96,Normal,None,17
-97,192.168.0.97,Normal,None,11
-98,192.168.0.98,Normal,None,2
-99,192.168.0.99,Normal,None,2
-100,192.168.0.100,Normal,None,23
-101,192.168.0.101,Normal,None,3
-102,192.168.0.102,Normal,None,24
-103,192.168.0.103,Attack,Back,82
-104,192.168.0.104,Attack,Smurf,77
-105,192.168.0.105,Normal,None,5
-106,192.168.0.106,Normal,None,9
-107,192.168.0.107,Attack,Back,93
-108,192.168.0.108,Normal,None,6
-109,192.168.0.109,Normal,None,15
-110,192.168.0.110,Normal,None,28
-111,192.168.0.111,Attack,Neptune,76
-112,192.168.0.112,Attack,Back,85
-113,192.168.0.113,Attack,Teardrop,90
-114,192.168.0.114,Normal,None,25
-115,192.168.0.115,Attack,Back,94
-116,192.168.0.116,Normal,None,4
-117,192.168.0.117,Normal,None,1
-118,192.168.0.118,Normal,None,27
-119,192.168.0.119,Normal,None,15
-120,192.168.0.120,Normal,None,28
-121,192.168.0.121,Normal,None,3
-122,192.168.0.122,Attack,Neptune,76
-123,192.168.0.123,Normal,None,15
-124,192.168.0.124,Attack,Teardrop,75
-125,192.168.0.125,Attack,Teardrop,74
-126,192.168.0.126,Normal,None,29
-127,192.168.0.127,Attack,Back,82
-128,192.168.0.128,Normal,None,26
-129,192.168.0.129,Normal,None,9
-130,192.168.0.130,Attack,Teardrop,82
-131,192.168.0.131,Normal,None,20
-132,192.168.0.132,Normal,None,15
-133,192.168.0.133,Normal,None,1
-134,192.168.0.134,Normal,None,17
-135,192.168.0.135,Normal,None,16
-136,192.168.0.136,Normal,None,3
-137,192.168.0.137,Normal,None,7
-138,192.168.0.138,Normal,None,19
-139,192.168.0.139,Normal,None,14
-140,192.168.0.140,Normal,None,26
-141,192.168.0.141,Attack,Neptune,78
-142,192.168.0.142,Attack,Smurf,80
-143,192.168.0.143,Normal,None,2
-144,192.168.0.144,Normal,None,4
-145,192.168.0.145,Normal,None,5
-146,192.168.0.146,Normal,None,15
-147,192.168.0.147,Normal,None,22
-148,192.168.0.148,Normal,None,24
-149,192.168.0.149,Normal,None,16
-150,192.168.0.150,Normal,None,18
-151,192.168.0.151,Normal,None,12
-152,192.168.0.152,Normal,None,24
-153,192.168.0.153,Attack,Back,72
-154,192.168.0.154,Normal,None,13
-155,192.168.0.155,Attack,Teardrop,92
-156,192.168.0.156,Normal,None,14
-157,192.168.0.157,Normal,None,14
-158,192.168.0.158,Normal,None,7
-159,192.168.0.159,Normal,None,9
-160,192.168.0.160,Normal,None,1
-161,192.168.0.161,Normal,None,10
-162,192.168.0.162,Normal,None,10
-163,192.168.0.163,Normal,None,6
-164,192.168.0.164,Attack,Teardrop,69
-165,192.168.0.165,Normal,None,12
-166,192.168.0.166,Attack,Neptune,61
-167,192.168.0.167,Attack,Neptune,88
-168,192.168.0.168,Normal,None,9
-169,192.168.0.169,Attack,Smurf,73
-170,192.168.0.170,Normal,None,18
-171,192.168.0.171,Attack,Back,75
-172,192.168.0.172,Normal,None,26
-173,192.168.0.173,Normal,None,12
-174,192.168.0.174,Normal,None,7
-175,192.168.0.175,Normal,None,29
-176,192.168.0.176,Normal,None,26
-177,192.168.0.177,Normal,None,28
-178,192.168.0.178,Attack,Back,74
-179,192.168.0.179,Normal,None,24
-180,192.168.0.180,Normal,None,11
-181,192.168.0.181,Normal,None,9
-182,192.168.0.182,Normal,None,3
-183,192.168.0.183,Normal,None,22
-184,192.168.0.184,Attack,Smurf,72
-185,192.168.0.185,Attack,Teardrop,70
-186,192.168.0.186,Normal,None,7
-187,192.168.0.187,Normal,None,24
-188,192.168.0.188,Normal,None,8
-189,192.168.0.189,Normal,None,6
-190,192.168.0.190,Attack,Teardrop,73
-191,192.168.0.191,Normal,None,3
-192,192.168.0.192,Attack,Back,81
-193,192.168.0.193,Normal,None,25
-194,192.168.0.194,Normal,None,9
-195,192.168.0.195,Normal,None,10
-196,192.168.0.196,Normal,None,1
-197,192.168.0.197,Attack,Back,70
-198,192.168.0.198,Normal,None,12
-199,192.168.0.199,Normal,None,12
-200,192.168.0.200,Normal,None,11
+ID,Source IP,Destination IP,Source Port,Destination Port,Session Time,Timestamp,Status,Attack Type,Risk,Recommendation,Reason
+1,10.0.0.112,172.20.0.147,48555,443,43,2026-04-01 10:00:00,Normal,None,62,🟡 Monitor,High anomaly
+2,10.0.0.189,172.20.0.246,17423,443,168,2026-04-01 10:00:01,Attack,neptune,20,🟢 Safe,Normal behavior
+3,10.0.0.91,172.20.0.39,47133,53,60,2026-04-01 10:00:02,Attack,neptune,15,🟢 Safe,Normal behavior
+4,10.0.0.147,172.20.0.68,34753,80,252,2026-04-01 10:00:03,Attack,neptune,26,🟢 Safe,Normal behavior
+5,10.0.0.57,172.20.0.191,1897,22,279,2026-04-01 10:00:04,Attack,smurf,73,⚠️ Repeat attacker,Multiple previous attacks
+6,10.0.0.245,172.20.0.172,34158,21,139,2026-04-01 10:00:05,Attack,neptune,19,🟢 Safe,Normal behavior
+7,10.0.0.182,172.20.0.168,49172,80,82,2026-04-01 10:00:06,Normal,None,74,⚠️ Repeat attacker,Multiple previous attacks
+8,10.0.0.224,172.20.0.135,26210,443,157,2026-04-01 10:00:07,Attack,neptune,11,🟢 Safe,Normal behavior
+9,10.0.0.157,172.20.0.15,5986,22,230,2026-04-01 10:00:08,Normal,None,77,⚠️ Repeat attacker,Multiple previous attacks
+10,10.0.0.56,172.20.0.159,6080,443,297,2026-04-01 10:00:09,Attack,smurf,84,🚨 Block IP,High risk
+11,10.0.0.59,172.20.0.5,39239,443,195,2026-04-01 10:00:10,Normal,None,83,🚨 Block IP,High risk
+12,10.0.0.119,172.20.0.75,60397,53,96,2026-04-01 10:00:11,Normal,None,84,🚨 Block IP,High risk
+13,10.0.0.189,172.20.0.19,57659,53,230,2026-04-01 10:00:12,Attack,neptune,10,🟢 Safe,Normal behavior
+14,10.0.0.124,172.20.0.243,23165,443,51,2026-04-01 10:00:13,Attack,neptune,20,🟢 Safe,Normal behavior
+15,10.0.0.242,172.20.0.91,46510,22,93,2026-04-01 10:00:14,Attack,neptune,7,🟢 Safe,Normal behavior
+16,10.0.0.3,172.20.0.220,48556,80,38,2026-04-01 10:00:15,Attack,neptune,11,🟢 Safe,Normal behavior
+17,10.0.0.236,172.20.0.150,25076,443,101,2026-04-01 10:00:16,Normal,None,90,🚨 Block IP,High risk
+18,10.0.0.92,172.20.0.17,5850,22,251,2026-04-01 10:00:17,Attack,neptune,5,🟢 Safe,Normal behavior
+19,10.0.0.58,172.20.0.109,3962,443,268,2026-04-01 10:00:18,Attack,neptune,28,🟢 Safe,Normal behavior
+20,10.0.0.182,172.20.0.252,15881,443,30,2026-04-01 10:00:19,Normal,None,77,🟢 Safe,Normal behavior
+21,10.0.0.209,172.20.0.85,6726,443,188,2026-04-01 10:00:20,Attack,neptune,14,🟢 Safe,Normal behavior
+22,10.0.0.166,172.20.0.103,25951,21,86,2026-04-01 10:00:21,Attack,neptune,23,🟢 Safe,Normal behavior
+23,10.0.0.37,172.20.0.249,26715,21,10,2026-04-01 10:00:22,Attack,smurf,61,🟡 Monitor,High anomaly
+24,10.0.0.224,172.20.0.47,15514,80,236,2026-04-01 10:00:23,Normal,None,66,⚠️ Repeat attacker,Multiple previous attacks
+25,10.0.0.174,172.20.0.144,41089,21,179,2026-04-01 10:00:24,Attack,neptune,15,🟢 Safe,Normal behavior
+26,10.0.0.163,172.20.0.26,9692,22,66,2026-04-01 10:00:25,Attack,neptune,26,🟢 Safe,Normal behavior
+27,10.0.0.20,172.20.0.155,55923,22,295,2026-04-01 10:00:26,Attack,guess_passwd,66,🟢 Safe,Normal behavior
+28,10.0.0.145,172.20.0.60,9141,80,84,2026-04-01 10:00:27,Attack,smurf,91,🚨 Block IP,High risk
+29,10.0.0.102,172.20.0.1,27488,22,145,2026-04-01 10:00:28,Attack,smurf,63,🟡 Monitor,High anomaly
+30,10.0.0.243,172.20.0.4,40491,80,277,2026-04-01 10:00:29,Attack,neptune,24,🟢 Safe,Normal behavior
+31,10.0.0.224,172.20.0.7,49046,80,73,2026-04-01 10:00:30,Attack,neptune,30,🟢 Safe,Normal behavior
+32,10.0.0.130,172.20.0.131,19495,21,285,2026-04-01 10:00:31,Attack,neptune,16,🟢 Safe,Normal behavior
+33,10.0.0.173,172.20.0.125,40479,80,140,2026-04-01 10:00:32,Attack,neptune,26,🟢 Safe,Normal behavior
+34,10.0.0.89,172.20.0.215,2099,22,22,2026-04-01 10:00:33,Attack,smurf,71,⚠️ Repeat attacker,Multiple previous attacks
+35,10.0.0.16,172.20.0.116,48379,21,185,2026-04-01 10:00:34,Attack,neptune,30,🟢 Safe,Normal behavior
+36,10.0.0.178,172.20.0.247,63743,80,67,2026-04-01 10:00:35,Attack,neptune,5,🟢 Safe,Normal behavior
+37,10.0.0.147,172.20.0.126,13722,443,47,2026-04-01 10:00:36,Attack,smurf,68,⚠️ Repeat attacker,Multiple previous attacks
+38,10.0.0.216,172.20.0.4,52779,53,114,2026-04-01 10:00:37,Normal,None,92,🚨 Block IP,High risk
+39,10.0.0.19,172.20.0.172,17436,21,144,2026-04-01 10:00:38,Attack,neptune,10,🟢 Safe,Normal behavior
+40,10.0.0.245,172.20.0.28,48517,80,103,2026-04-01 10:00:39,Attack,neptune,27,🟢 Safe,Normal behavior
+41,10.0.0.111,172.20.0.208,61457,80,273,2026-04-01 10:00:40,Attack,smurf,66,⚠️ Repeat attacker,Multiple previous attacks
+42,10.0.0.71,172.20.0.140,16764,80,216,2026-04-01 10:00:41,Attack,smurf,66,🟡 Monitor,High anomaly
+43,10.0.0.60,172.20.0.126,62251,443,198,2026-04-01 10:00:42,Attack,neptune,10,🟢 Safe,Normal behavior
+44,10.0.0.226,172.20.0.233,8944,21,82,2026-04-01 10:00:43,Attack,neptune,14,🟢 Safe,Normal behavior
+45,10.0.0.117,172.20.0.28,9523,22,106,2026-04-01 10:00:44,Normal,None,60,⚠️ Repeat attacker,Multiple previous attacks
+46,10.0.0.142,172.20.0.250,51742,21,121,2026-04-01 10:00:45,Attack,smurf,85,🚨 Block IP,High risk
+47,10.0.0.36,172.20.0.84,61637,80,101,2026-04-01 10:00:46,Attack,smurf,70,⚠️ Repeat attacker,Multiple previous attacks
+48,10.0.0.76,172.20.0.221,28564,53,72,2026-04-01 10:00:47,Attack,neptune,18,🟢 Safe,Normal behavior
+49,10.0.0.31,172.20.0.87,57036,22,249,2026-04-01 10:00:48,Attack,guess_passwd,65,⚠️ Repeat attacker,Multiple previous attacks
+50,10.0.0.178,172.20.0.250,5333,443,297,2026-04-01 10:00:49,Attack,neptune,5,🟢 Safe,Normal behavior
+51,10.0.0.64,172.20.0.54,46844,53,272,2026-04-01 10:00:50,Normal,None,87,🚨 Block IP,High risk
+52,10.0.0.169,172.20.0.172,53299,443,77,2026-04-01 10:00:51,Attack,neptune,14,🟢 Safe,Normal behavior
+53,10.0.0.83,172.20.0.93,58789,21,120,2026-04-01 10:00:52,Normal,None,86,🚨 Block IP,High risk
+54,10.0.0.57,172.20.0.247,27848,21,85,2026-04-01 10:00:53,Attack,neptune,18,🟢 Safe,Normal behavior
+55,10.0.0.209,172.20.0.136,33066,80,220,2026-04-01 10:00:54,Attack,neptune,5,🟢 Safe,Normal behavior
+56,10.0.0.135,172.20.0.180,1064,53,131,2026-04-01 10:00:55,Attack,neptune,5,🟢 Safe,Normal behavior
+57,10.0.0.96,172.20.0.249,60183,80,169,2026-04-01 10:00:56,Normal,None,82,🚨 Block IP,High risk
+58,10.0.0.225,172.20.0.45,44029,80,105,2026-04-01 10:00:57,Normal,None,71,⚠️ Repeat attacker,Multiple previous attacks
+59,10.0.0.95,172.20.0.247,45304,443,92,2026-04-01 10:00:58,Attack,neptune,9,🟢 Safe,Normal behavior
+60,10.0.0.104,172.20.0.255,29238,21,146,2026-04-01 10:00:59,Attack,neptune,12,🟢 Safe,Normal behavior
+61,10.0.0.14,172.20.0.7,19402,443,40,2026-04-01 10:01:00,Attack,guess_passwd,65,🟡 Monitor,High anomaly
+62,10.0.0.161,172.20.0.48,22441,80,161,2026-04-01 10:01:01,Attack,neptune,24,🟢 Safe,Normal behavior
+63,10.0.0.197,172.20.0.90,41735,80,94,2026-04-01 10:01:02,Attack,neptune,17,🟢 Safe,Normal behavior
+64,10.0.0.173,172.20.0.67,27372,21,179,2026-04-01 10:01:03,Attack,smurf,60,🟢 Safe,Normal behavior
+65,10.0.0.248,172.20.0.124,27870,53,280,2026-04-01 10:01:04,Normal,None,76,🟢 Safe,Normal behavior
+66,10.0.0.218,172.20.0.192,28569,443,288,2026-04-01 10:01:05,Attack,smurf,93,🚨 Block IP,High risk
+67,10.0.0.26,172.20.0.33,50461,443,215,2026-04-01 10:01:06,Attack,neptune,28,🟢 Safe,Normal behavior
+68,10.0.0.55,172.20.0.11,42716,22,282,2026-04-01 10:01:07,Attack,neptune,29,🟢 Safe,Normal behavior
+69,10.0.0.26,172.20.0.24,52304,80,159,2026-04-01 10:01:08,Attack,neptune,10,🟢 Safe,Normal behavior
+70,10.0.0.79,172.20.0.96,9718,443,263,2026-04-01 10:01:09,Attack,neptune,20,🟢 Safe,Normal behavior
+71,10.0.0.85,172.20.0.139,24714,21,50,2026-04-01 10:01:10,Attack,smurf,80,⚠️ Repeat attacker,Multiple previous attacks
+72,10.0.0.113,172.20.0.160,41366,80,56,2026-04-01 10:01:11,Attack,neptune,11,🟢 Safe,Normal behavior
+73,10.0.0.134,172.20.0.27,52283,21,18,2026-04-01 10:01:12,Attack,neptune,30,🟢 Safe,Normal behavior
+74,10.0.0.166,172.20.0.175,55009,80,144,2026-04-01 10:01:13,Attack,neptune,13,🟢 Safe,Normal behavior
+75,10.0.0.101,172.20.0.102,34463,80,24,2026-04-01 10:01:14,Attack,neptune,5,🟢 Safe,Normal behavior
+76,10.0.0.145,172.20.0.148,47647,22,143,2026-04-01 10:01:15,Normal,None,70,⚠️ Repeat attacker,Multiple previous attacks
+77,10.0.0.215,172.20.0.68,15421,21,242,2026-04-01 10:01:16,Normal,None,63,🟢 Safe,Normal behavior
+78,10.0.0.14,172.20.0.134,23848,53,234,2026-04-01 10:01:17,Attack,smurf,94,🚨 Block IP,High risk
+79,10.0.0.182,172.20.0.144,40160,53,53,2026-04-01 10:01:18,Attack,smurf,79,🟡 Monitor,High anomaly
+80,10.0.0.150,172.20.0.63,40802,443,177,2026-04-01 10:01:19,Attack,neptune,30,🟢 Safe,Normal behavior
+81,10.0.0.247,172.20.0.172,2940,80,198,2026-04-01 10:01:20,Attack,neptune,21,🟢 Safe,Normal behavior
+82,10.0.0.196,172.20.0.30,54268,443,95,2026-04-01 10:01:21,Attack,neptune,28,🟢 Safe,Normal behavior
+83,10.0.0.226,172.20.0.114,64464,22,145,2026-04-01 10:01:22,Attack,smurf,78,⚠️ Repeat attacker,Multiple previous attacks
+84,10.0.0.134,172.20.0.211,1496,443,103,2026-04-01 10:01:23,Attack,neptune,7,🟢 Safe,Normal behavior
+85,10.0.0.72,172.20.0.146,52735,80,264,2026-04-01 10:01:24,Attack,neptune,28,🟢 Safe,Normal behavior
+86,10.0.0.253,172.20.0.178,51350,21,226,2026-04-01 10:01:25,Normal,None,60,⚠️ Repeat attacker,Multiple previous attacks
+87,10.0.0.131,172.20.0.200,5516,80,139,2026-04-01 10:01:26,Attack,neptune,6,🟢 Safe,Normal behavior
+88,10.0.0.242,172.20.0.241,59218,22,238,2026-04-01 10:01:27,Attack,neptune,28,🟢 Safe,Normal behavior
+89,10.0.0.167,172.20.0.251,21434,21,111,2026-04-01 10:01:28,Attack,smurf,74,⚠️ Repeat attacker,Multiple previous attacks
+90,10.0.0.247,172.20.0.114,24089,443,295,2026-04-01 10:01:29,Attack,guess_passwd,81,🚨 Block IP,High risk
+91,10.0.0.66,172.20.0.31,59493,21,222,2026-04-01 10:01:30,Attack,neptune,19,🟢 Safe,Normal behavior
+92,10.0.0.90,172.20.0.164,48953,22,80,2026-04-01 10:01:31,Attack,smurf,91,🚨 Block IP,High risk
+93,10.0.0.100,172.20.0.42,29563,80,202,2026-04-01 10:01:32,Attack,neptune,7,🟢 Safe,Normal behavior
+94,10.0.0.9,172.20.0.161,22705,443,147,2026-04-01 10:01:33,Attack,neptune,9,🟢 Safe,Normal behavior
+95,10.0.0.26,172.20.0.233,8107,21,164,2026-04-01 10:01:34,Normal,None,64,⚠️ Repeat attacker,Multiple previous attacks
+96,10.0.0.35,172.20.0.137,8696,53,280,2026-04-01 10:01:35,Attack,neptune,21,🟢 Safe,Normal behavior
+97,10.0.0.110,172.20.0.183,26850,80,157,2026-04-01 10:01:36,Attack,neptune,10,🟢 Safe,Normal behavior
+98,10.0.0.131,172.20.0.218,23657,22,225,2026-04-01 10:01:37,Normal,None,71,⚠️ Repeat attacker,Multiple previous attacks
+99,10.0.0.225,172.20.0.84,47285,22,282,2026-04-01 10:01:38,Attack,neptune,17,🟢 Safe,Normal behavior
+100,10.0.0.120,172.20.0.83,55589,80,280,2026-04-01 10:01:39,Attack,guess_passwd,94,🚨 Block IP,High risk
+101,10.0.0.114,172.20.0.166,49664,80,108,2026-04-01 10:01:40,Attack,smurf,91,🚨 Block IP,High risk
+102,10.0.0.102,172.20.0.193,21539,53,173,2026-04-01 10:01:41,Attack,neptune,9,🟢 Safe,Normal behavior
+103,10.0.0.224,172.20.0.135,37049,443,300,2026-04-01 10:01:42,Attack,neptune,15,🟢 Safe,Normal behavior
+104,10.0.0.165,172.20.0.192,32133,21,249,2026-04-01 10:01:43,Attack,neptune,28,🟢 Safe,Normal behavior
+105,10.0.0.163,172.20.0.30,24598,22,86,2026-04-01 10:01:44,Normal,None,93,🚨 Block IP,High risk
+106,10.0.0.255,172.20.0.218,14057,22,198,2026-04-01 10:01:45,Normal,None,81,🚨 Block IP,High risk
+107,10.0.0.42,172.20.0.184,25203,22,186,2026-04-01 10:01:46,Attack,neptune,24,🟢 Safe,Normal behavior
+108,10.0.0.68,172.20.0.222,6139,21,62,2026-04-01 10:01:47,Attack,smurf,62,⚠️ Repeat attacker,Multiple previous attacks
+109,10.0.0.245,172.20.0.19,20266,22,267,2026-04-01 10:01:48,Normal,None,72,⚠️ Repeat attacker,Multiple previous attacks
+110,10.0.0.13,172.20.0.78,39923,80,295,2026-04-01 10:01:49,Attack,smurf,72,⚠️ Repeat attacker,Multiple previous attacks
+111,10.0.0.195,172.20.0.122,56989,53,156,2026-04-01 10:01:50,Normal,None,60,⚠️ Repeat attacker,Multiple previous attacks
+112,10.0.0.192,172.20.0.185,57440,53,29,2026-04-01 10:01:51,Normal,None,84,🚨 Block IP,High risk
+113,10.0.0.74,172.20.0.154,56188,443,189,2026-04-01 10:01:52,Attack,smurf,80,🟢 Safe,Normal behavior
+114,10.0.0.80,172.20.0.97,55505,443,208,2026-04-01 10:01:53,Attack,neptune,12,🟢 Safe,Normal behavior
+115,10.0.0.184,172.20.0.162,43935,80,287,2026-04-01 10:01:54,Attack,neptune,6,🟢 Safe,Normal behavior
+116,10.0.0.10,172.20.0.222,57157,80,76,2026-04-01 10:01:55,Attack,smurf,89,🚨 Block IP,High risk
+117,10.0.0.199,172.20.0.176,58618,53,294,2026-04-01 10:01:56,Attack,neptune,21,🟢 Safe,Normal behavior
+118,10.0.0.200,172.20.0.191,29971,80,147,2026-04-01 10:01:57,Normal,None,71,🟢 Safe,Normal behavior
+119,10.0.0.175,172.20.0.54,48327,443,182,2026-04-01 10:01:58,Attack,guess_passwd,89,🚨 Block IP,High risk
+120,10.0.0.42,172.20.0.58,56960,80,181,2026-04-01 10:01:59,Attack,neptune,19,🟢 Safe,Normal behavior
+121,10.0.0.154,172.20.0.224,6651,22,134,2026-04-01 10:02:00,Attack,neptune,18,🟢 Safe,Normal behavior
+122,10.0.0.237,172.20.0.92,32754,53,12,2026-04-01 10:02:01,Attack,smurf,66,🟡 Monitor,High anomaly
+123,10.0.0.177,172.20.0.182,41019,443,58,2026-04-01 10:02:02,Attack,neptune,5,🟢 Safe,Normal behavior
+124,10.0.0.164,172.20.0.206,9408,21,38,2026-04-01 10:02:03,Attack,smurf,60,⚠️ Repeat attacker,Multiple previous attacks
+125,10.0.0.57,172.20.0.18,64683,22,204,2026-04-01 10:02:04,Attack,neptune,23,🟢 Safe,Normal behavior
+126,10.0.0.74,172.20.0.254,12833,22,224,2026-04-01 10:02:05,Attack,neptune,19,🟢 Safe,Normal behavior
+127,10.0.0.89,172.20.0.201,26576,80,211,2026-04-01 10:02:06,Attack,smurf,78,⚠️ Repeat attacker,Multiple previous attacks
+128,10.0.0.120,172.20.0.6,40965,53,280,2026-04-01 10:02:07,Attack,guess_passwd,60,🟢 Safe,Normal behavior
+129,10.0.0.203,172.20.0.161,32562,22,279,2026-04-01 10:02:08,Attack,neptune,27,🟢 Safe,Normal behavior
+130,10.0.0.52,172.20.0.20,31149,21,31,2026-04-01 10:02:09,Attack,smurf,67,⚠️ Repeat attacker,Multiple previous attacks
+131,10.0.0.1,172.20.0.235,11257,21,189,2026-04-01 10:02:10,Normal,None,68,⚠️ Repeat attacker,Multiple previous attacks
+132,10.0.0.160,172.20.0.205,8958,443,233,2026-04-01 10:02:11,Normal,None,66,⚠️ Repeat attacker,Multiple previous attacks
+133,10.0.0.35,172.20.0.127,3432,53,107,2026-04-01 10:02:12,Attack,smurf,86,🚨 Block IP,High risk
+134,10.0.0.131,172.20.0.97,30175,80,279,2026-04-01 10:02:13,Normal,None,95,🚨 Block IP,High risk
+135,10.0.0.81,172.20.0.190,55762,22,157,2026-04-01 10:02:14,Attack,guess_passwd,90,🚨 Block IP,High risk
+136,10.0.0.68,172.20.0.65,57411,21,157,2026-04-01 10:02:15,Attack,smurf,82,🚨 Block IP,High risk
+137,10.0.0.80,172.20.0.13,48745,80,57,2026-04-01 10:02:16,Attack,smurf,61,⚠️ Repeat attacker,Multiple previous attacks
+138,10.0.0.177,172.20.0.16,30450,53,134,2026-04-01 10:02:17,Attack,neptune,16,🟢 Safe,Normal behavior
+139,10.0.0.135,172.20.0.4,47213,21,158,2026-04-01 10:02:18,Attack,smurf,86,🚨 Block IP,High risk
+140,10.0.0.109,172.20.0.150,35268,53,33,2026-04-01 10:02:19,Attack,smurf,87,🚨 Block IP,High risk
+141,10.0.0.48,172.20.0.193,44975,21,277,2026-04-01 10:02:20,Normal,None,82,🚨 Block IP,High risk
+142,10.0.0.28,172.20.0.135,58868,22,214,2026-04-01 10:02:21,Attack,neptune,7,🟢 Safe,Normal behavior
+143,10.0.0.161,172.20.0.118,63218,22,184,2026-04-01 10:02:22,Attack,smurf,66,⚠️ Repeat attacker,Multiple previous attacks
+144,10.0.0.107,172.20.0.82,53036,53,230,2026-04-01 10:02:23,Attack,guess_passwd,62,⚠️ Repeat attacker,Multiple previous attacks
+145,10.0.0.37,172.20.0.199,4109,443,81,2026-04-01 10:02:24,Normal,None,73,🟢 Safe,Normal behavior
+146,10.0.0.104,172.20.0.88,15444,21,146,2026-04-01 10:02:25,Attack,smurf,77,🟡 Monitor,High anomaly
+147,10.0.0.61,172.20.0.48,51331,80,173,2026-04-01 10:02:26,Normal,None,71,⚠️ Repeat attacker,Multiple previous attacks
+148,10.0.0.152,172.20.0.164,34438,53,248,2026-04-01 10:02:27,Attack,neptune,29,🟢 Safe,Normal behavior
+149,10.0.0.159,172.20.0.203,27814,21,196,2026-04-01 10:02:28,Normal,None,83,🚨 Block IP,High risk
+150,10.0.0.47,172.20.0.27,59555,80,119,2026-04-01 10:02:29,Attack,neptune,23,🟢 Safe,Normal behavior
+151,10.0.0.146,172.20.0.240,3122,22,265,2026-04-01 10:02:30,Attack,neptune,29,🟢 Safe,Normal behavior
+152,10.0.0.7,172.20.0.176,44496,21,87,2026-04-01 10:02:31,Normal,None,70,🟡 Monitor,High anomaly
+153,10.0.0.46,172.20.0.184,17541,22,229,2026-04-01 10:02:32,Attack,smurf,93,🚨 Block IP,High risk
+154,10.0.0.179,172.20.0.146,27021,22,239,2026-04-01 10:02:33,Attack,smurf,72,⚠️ Repeat attacker,Multiple previous attacks
+155,10.0.0.121,172.20.0.118,46679,443,205,2026-04-01 10:02:34,Normal,None,64,⚠️ Repeat attacker,Multiple previous attacks
+156,10.0.0.196,172.20.0.243,34584,443,121,2026-04-01 10:02:35,Normal,None,86,🚨 Block IP,High risk
+157,10.0.0.149,172.20.0.87,35670,21,137,2026-04-01 10:02:36,Attack,neptune,16,🟢 Safe,Normal behavior
+158,10.0.0.172,172.20.0.7,64464,80,110,2026-04-01 10:02:37,Attack,neptune,17,🟢 Safe,Normal behavior
+159,10.0.0.236,172.20.0.153,12517,22,154,2026-04-01 10:02:38,Attack,smurf,73,🟡 Monitor,High anomaly
+160,10.0.0.224,172.20.0.155,61151,22,233,2026-04-01 10:02:39,Attack,neptune,21,🟢 Safe,Normal behavior
+161,10.0.0.255,172.20.0.88,19864,22,16,2026-04-01 10:02:40,Attack,neptune,29,🟢 Safe,Normal behavior
+162,10.0.0.71,172.20.0.178,34700,80,274,2026-04-01 10:02:41,Attack,neptune,28,🟢 Safe,Normal behavior
+163,10.0.0.123,172.20.0.87,47565,80,81,2026-04-01 10:02:42,Normal,None,70,🟢 Safe,Normal behavior
+164,10.0.0.234,172.20.0.201,27544,21,95,2026-04-01 10:02:43,Attack,guess_passwd,83,🚨 Block IP,High risk
+165,10.0.0.27,172.20.0.255,6448,22,116,2026-04-01 10:02:44,Attack,neptune,19,🟢 Safe,Normal behavior
+166,10.0.0.31,172.20.0.104,62990,22,276,2026-04-01 10:02:45,Attack,smurf,67,🟢 Safe,Normal behavior
+167,10.0.0.65,172.20.0.187,24878,443,181,2026-04-01 10:02:46,Attack,smurf,60,⚠️ Repeat attacker,Multiple previous attacks
+168,10.0.0.188,172.20.0.236,43460,443,247,2026-04-01 10:02:47,Attack,neptune,30,🟢 Safe,Normal behavior
+169,10.0.0.227,172.20.0.116,40972,53,49,2026-04-01 10:02:48,Attack,neptune,28,🟢 Safe,Normal behavior
+170,10.0.0.113,172.20.0.168,37029,443,242,2026-04-01 10:02:49,Normal,None,63,⚠️ Repeat attacker,Multiple previous attacks
+171,10.0.0.112,172.20.0.57,34849,22,194,2026-04-01 10:02:50,Attack,neptune,9,🟢 Safe,Normal behavior
+172,10.0.0.171,172.20.0.117,3815,21,96,2026-04-01 10:02:51,Attack,smurf,80,🟡 Monitor,High anomaly
+173,10.0.0.94,172.20.0.45,21145,53,168,2026-04-01 10:02:52,Attack,neptune,13,🟢 Safe,Normal behavior
+174,10.0.0.214,172.20.0.202,21959,21,203,2026-04-01 10:02:53,Attack,neptune,6,🟢 Safe,Normal behavior
+175,10.0.0.77,172.20.0.255,2999,21,148,2026-04-01 10:02:54,Attack,neptune,30,🟢 Safe,Normal behavior
+176,10.0.0.114,172.20.0.202,5549,80,270,2026-04-01 10:02:55,Normal,None,93,🚨 Block IP,High risk
+177,10.0.0.70,172.20.0.51,37649,21,231,2026-04-01 10:02:56,Attack,neptune,21,🟢 Safe,Normal behavior
+178,10.0.0.15,172.20.0.72,62961,443,298,2026-04-01 10:02:57,Attack,neptune,25,🟢 Safe,Normal behavior
+179,10.0.0.143,172.20.0.118,38208,53,44,2026-04-01 10:02:58,Attack,neptune,6,🟢 Safe,Normal behavior
+180,10.0.0.163,172.20.0.45,2958,53,80,2026-04-01 10:02:59,Attack,smurf,85,🚨 Block IP,High risk
+181,10.0.0.96,172.20.0.168,19561,21,64,2026-04-01 10:03:00,Attack,neptune,25,🟢 Safe,Normal behavior
+182,10.0.0.97,172.20.0.88,65081,53,23,2026-04-01 10:03:01,Attack,neptune,17,🟢 Safe,Normal behavior
+183,10.0.0.158,172.20.0.6,34133,53,129,2026-04-01 10:03:02,Attack,smurf,93,🚨 Block IP,High risk
+184,10.0.0.128,172.20.0.3,44236,53,15,2026-04-01 10:03:03,Attack,neptune,24,🟢 Safe,Normal behavior
+185,10.0.0.186,172.20.0.122,24379,22,166,2026-04-01 10:03:04,Attack,neptune,12,🟢 Safe,Normal behavior
+186,10.0.0.228,172.20.0.149,51527,53,120,2026-04-01 10:03:05,Attack,smurf,77,🟢 Safe,Normal behavior
+187,10.0.0.31,172.20.0.27,45887,21,273,2026-04-01 10:03:06,Attack,smurf,67,⚠️ Repeat attacker,Multiple previous attacks
+188,10.0.0.251,172.20.0.136,20094,443,152,2026-04-01 10:03:07,Attack,smurf,73,⚠️ Repeat attacker,Multiple previous attacks
+189,10.0.0.185,172.20.0.168,12661,22,214,2026-04-01 10:03:08,Attack,neptune,21,🟢 Safe,Normal behavior
+190,10.0.0.192,172.20.0.104,46739,80,260,2026-04-01 10:03:09,Attack,neptune,14,🟢 Safe,Normal behavior
+191,10.0.0.90,172.20.0.56,36763,53,289,2026-04-01 10:03:10,Attack,neptune,13,🟢 Safe,Normal behavior
+192,10.0.0.126,172.20.0.33,43068,443,211,2026-04-01 10:03:11,Attack,neptune,23,🟢 Safe,Normal behavior
+193,10.0.0.233,172.20.0.204,48540,22,151,2026-04-01 10:03:12,Attack,smurf,63,⚠️ Repeat attacker,Multiple previous attacks
+194,10.0.0.95,172.20.0.41,26622,21,124,2026-04-01 10:03:13,Attack,neptune,13,🟢 Safe,Normal behavior
+195,10.0.0.46,172.20.0.60,65322,53,149,2026-04-01 10:03:14,Normal,None,92,🚨 Block IP,High risk
+196,10.0.0.197,172.20.0.232,36497,22,281,2026-04-01 10:03:15,Attack,guess_passwd,73,🟢 Safe,Normal behavior
+197,10.0.0.29,172.20.0.155,4506,53,150,2026-04-01 10:03:16,Attack,neptune,21,🟢 Safe,Normal behavior
+198,10.0.0.156,172.20.0.159,40670,80,244,2026-04-01 10:03:17,Normal,None,61,⚠️ Repeat attacker,Multiple previous attacks
+199,10.0.0.181,172.20.0.123,12459,80,69,2026-04-01 10:03:18,Attack,neptune,14,🟢 Safe,Normal behavior
+200,10.0.0.132,172.20.0.104,60612,80,125,2026-04-01 10:03:19,Attack,smurf,82,🚨 Block IP,High risk

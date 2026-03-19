@@ -12,85 +12,49 @@ function App() {
 
   const [file, setFile] = useState(null);
   const [results, setResults] = useState(null);
-  const [selectedRow, setSelectedRow] = useState(null);
+  const [selected, setSelected] = useState(null);
 
-  // ==============================
-  // Upload Handler
-  // ==============================
+  // =========================
+  // FILE UPLOAD
+  // =========================
 
-  const handleUpload = async () => {
+  const upload = async () => {
 
-    const formData = new FormData();
-    formData.append("file", file);
+    if (!file) {
+      alert("Please select a file");
+      return;
+    }
+
+    const form = new FormData();
+    form.append("file", file);
 
     try {
-
-      const response = await fetch("http://127.0.0.1:5000/upload", {
+      const res = await fetch("http://127.0.0.1:5000/upload", {
         method: "POST",
-        body: formData
+        body: form
       });
 
-      const data = await response.json();
+      if (!res.ok) {
+        const err = await res.text();
+        console.error(err);
+        alert("Backend error");
+        return;
+      }
+
+      const data = await res.json();
+      console.log("Response:", data);
 
       setResults(data);
 
-    } catch {
-      alert("Error connecting to backend.");
+    } catch (e) {
+      console.error(e);
+      alert("Error connecting to backend");
     }
   };
 
-  // ==============================
-  // Recommendation Logic
-  // ==============================
-
-  const getRecommendation = (attackType, risk) => {
-
-    if (!attackType || attackType === "None") {
-      return {
-        action: "No action required",
-        reason: "Traffic is normal and no malicious behavior detected"
-      };
-    }
-
-    const type = attackType.toLowerCase();
-
-    if (type.includes("back") || type.includes("dos")) {
-      return {
-        action: "Block IP immediately and apply rate limiting",
-        reason: "High traffic flood detected indicating Denial-of-Service attack"
-      };
-    }
-
-    if (type.includes("probe")) {
-      return {
-        action: "Monitor traffic and enable intrusion alerts",
-        reason: "Suspicious scanning activity detected (port/service probing)"
-      };
-    }
-
-    if (type.includes("r2l")) {
-      return {
-        action: "Restrict remote access and enforce authentication",
-        reason: "Unauthorized remote login attempt detected"
-      };
-    }
-
-    if (type.includes("u2r")) {
-      return {
-        action: "Isolate system and audit user privileges",
-        reason: "Privilege escalation attack detected"
-      };
-    }
-
-    return {
-      action: "Monitor traffic",
-      reason: "Unusual behavior detected in network activity"
-    };
-  };
-
-  // ==============================
-  // Initial Upload Screen
-  // ==============================
+  // =========================
+  // INITIAL SCREEN
+  // =========================
 
   if (!results) {
     return (
@@ -99,193 +63,161 @@ function App() {
 
         <input
           type="file"
-          onChange={(e) => setFile(e.target.files[0])}
+          onChange={e => setFile(e.target.files[0])}
         />
 
-        <button onClick={handleUpload}>
+        <button onClick={upload}>
           Analyze
         </button>
       </div>
     );
   }
 
-  // ==============================
-  // Charts Data
-  // ==============================
+  // =========================
+  // DATA FOR CHARTS
+  // =========================
 
-  const pieData = [
+  const pie = [
     { name: "Attack", value: results["Detected Attacks"] },
     { name: "Normal", value: results["Detected Normal"] }
   ];
 
-  const attackDistribution =
-    Object.entries(results["Attack Type Distribution"])
-      .map(([key, value]) => ({
-        name: key,
-        value
-      }));
+  const bar = Object.entries(results["Attack Type Distribution"])
+    .map(([k, v]) => ({ name: k, value: v }));
 
-  const timelineData =
-    Array.from({ length: 10 }, (_, i) => ({
-      time: "T" + i,
-      attacks: Math.floor(Math.random() * 100)
-    }));
+  const line = results.rows.map((r, i) => ({
+    time: i + 1,
+    attacks: r.Status === "Attack" ? 1 : 0
+  }));
+
+  // =========================
+  // MAIN UI
+  // =========================
 
   return (
-
     <div style={{
-      padding: 30,
+      padding: 20,
       height: "100vh",
       overflowY: "scroll"
     }}>
 
-      <h1>Hybrid CyberShield Dashboard</h1>
+      <h1>Hybrid Intrusion Detection Dashboard</h1>
 
       {/* SUMMARY */}
-
-      <h2>Summary</h2>
-
-      <p>Total Records: {results["Total Records"]}</p>
-      <p>Detected Attacks: {results["Detected Attacks"]}</p>
-      <p>Detected Normal: {results["Detected Normal"]}</p>
-      <p>Most Frequent Attack: {results["Most Frequent Attack"]}</p>
+      <h3>Total Records: {results["Total Records"]}</h3>
+      <h3>Attacks: {results["Detected Attacks"]}</h3>
+      <h3>Normal: {results["Detected Normal"]}</h3>
 
       <div style={{ display: "flex", marginTop: 20 }}>
 
-        {/* TABLE */}
-
+        {/* ================= TABLE ================= */}
         <div style={{
-          width: "60%",
+          width: "65%",
           maxHeight: 500,
           overflow: "auto"
         }}>
 
-          <h2>Detection Results</h2>
-
           <table border="1" width="100%">
-
             <thead>
               <tr>
                 <th>ID</th>
-                <th>IP</th>
+                <th>Src IP</th>
+                <th>Dst IP</th>
+                <th>Src Port</th>
+                <th>Dst Port</th>
                 <th>Status</th>
-                <th>Attack Type</th>
+                <th>Attack</th>
+                <th>Session</th>
+                <th>Timestamp</th>
                 <th>Risk</th>
               </tr>
             </thead>
 
             <tbody>
-
-              {results.rows.slice(0, 200).map(row => (
-
+              {results.rows.map(r => (
                 <tr
-                  key={row.ID}
-                  onClick={() => setSelectedRow(row)}
+                  key={r.ID}
+                  onClick={() => setSelected(r)}
                   style={{
                     backgroundColor:
-                      row.Status === "Attack"
-                        ? "#ffcccc"
-                        : "#ccffcc",
-                    cursor: "pointer"
+                      r.Risk > 80 ? "#ff4d4d" :
+                      r.Risk > 40 ? "#ffd11a" :
+                      "#ccffcc"
                   }}
                 >
-
-                  <td>{row.ID}</td>
-                  <td>{row.IP}</td>
-                  <td>{row.Status}</td>
-                  <td>{row["Attack Type"]}</td>
-                  <td>{row.Risk}</td>
-
+                  <td>{r.ID}</td>
+                  <td>{r["Source IP"]}</td>
+                  <td>{r["Destination IP"]}</td>
+                  <td>{r["Source Port"]}</td>
+                  <td>{r["Destination Port"]}</td>
+                  <td>{r.Status}</td>
+                  <td>{r["Attack Type"]}</td>
+                  <td>{r["Session Time"]}</td>
+                  <td>{r.Timestamp}</td>
+                  <td>{r.Risk}%</td>
                 </tr>
-
               ))}
-
             </tbody>
-
           </table>
 
         </div>
 
-        {/* RECOMMENDATION PANEL */}
-
+        {/* ================= RECOMMENDATION ================= */}
         <div style={{
-          width: "40%",
+          width: "35%",
           paddingLeft: 20
         }}>
 
           <h2>Recommendation Panel</h2>
 
-          {selectedRow ? (() => {
+          {selected ? (
+            <div>
+              <p><b>Attack Type:</b> {selected["Attack Type"]}</p>
+              <p><b>Status:</b> {selected.Status}</p>
+              <p><b>Risk:</b> {selected.Risk}%</p>
 
-            const rec = getRecommendation(
-              selectedRow["Attack Type"],
-              selectedRow.Risk
-            );
+              <p>
+                <b>Severity:</b>
+                {selected.Risk > 70 ? " High" :
+                 selected.Risk > 40 ? " Medium" :
+                 " Low"}
+              </p>
 
-            return (
-              <div>
+              <p><b>Reason:</b> {selected.Reason}</p>
+              <p><b>Action:</b> {selected.Recommendation}</p>
 
-                <p><b>Attack Type:</b> {selectedRow["Attack Type"]}</p>
-
-                <p><b>Status:</b> {selectedRow.Status}</p>
-
-                <p><b>Risk:</b> {selectedRow.Risk}</p>
-
-                <p>
-                  <b>Severity:</b>
-                  {parseInt(selectedRow.Risk) > 70
-                    ? " High"
-                    : parseInt(selectedRow.Risk) > 40
-                    ? " Medium"
-                    : " Low"}
-                </p>
-
-                <p><b>Reason:</b> {rec.reason}</p>
-
-                <p><b>Recommended Action:</b> {rec.action}</p>
-
-                <p>
-                  <b>Trust Score:</b>
-                  {100 - parseInt(selectedRow.Risk)}%
-                </p>
-
-              </div>
-            );
-
-          })() : (
-
-            <p>Select a row to see details</p>
-
+              <p><b>Trust Score:</b> {100 - selected.Risk}%</p>
+            </div>
+          ) : (
+            <p>Select a row</p>
           )}
 
         </div>
 
       </div>
 
-      {/* ANALYTICS */}
+      {/* ================= CHARTS ================= */}
 
-      <h2 style={{ marginTop: 50 }}>Analytics</h2>
+      <h2 style={{ marginTop: 40 }}>Analytics</h2>
 
       <div style={{
         display: "flex",
         justifyContent: "space-around",
-        marginTop: 30
+        marginTop: 20
       }}>
 
         {/* PIE */}
-
-        <PieChart width={450} height={350}>
-          <Pie data={pieData} dataKey="value" outerRadius={130} label>
+        <PieChart width={350} height={300}>
+          <Pie data={pie} dataKey="value" outerRadius={120}>
             <Cell fill="red" />
             <Cell fill="green" />
           </Pie>
-          <Legend />
           <Tooltip />
+          <Legend />
         </PieChart>
 
         {/* BAR */}
-
-        <BarChart width={550} height={350} data={attackDistribution}>
+        <BarChart width={450} height={300} data={bar}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
@@ -295,8 +227,7 @@ function App() {
         </BarChart>
 
         {/* LINE */}
-
-        <LineChart width={550} height={350} data={timelineData}>
+        <LineChart width={450} height={300} data={line}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="time" />
           <YAxis />
