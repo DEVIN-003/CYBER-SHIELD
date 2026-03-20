@@ -3,6 +3,7 @@ from flask_cors import CORS
 import pandas as pd
 import subprocess
 import os
+import ast   # ✅ SAFE conversion
 
 app = Flask(__name__)
 CORS(app)
@@ -40,18 +41,39 @@ def upload():
         # Load results
         df = pd.read_csv(RESULT_PATH)
 
-        # 🔥 FIX: Remove NaN (IMPORTANT)
+        # ================================
+        # 🔥 FIX 1: HANDLE NaN
+        # ================================
         df = df.fillna("")
 
-        # Summary
+        # ================================
+        # 🔥 FIX 2: CONVERT STEPS STRING → LIST
+        # ================================
+        if "Steps" in df.columns:
+            def convert_steps(x):
+                try:
+                    if isinstance(x, str) and x.startswith("["):
+                        return ast.literal_eval(x)   # ✅ safe conversion
+                    else:
+                        return []
+                except:
+                    return []
+
+            df["Steps"] = df["Steps"].apply(convert_steps)
+
+        # ================================
+        # SUMMARY
+        # ================================
         total = len(df)
         attacks = len(df[df["Status"] == "Attack"])
         normal = len(df[df["Status"] == "Normal"])
 
         attack_dist = df["Attack Type"].value_counts().to_dict()
-
         most_attack = max(attack_dist, key=attack_dist.get) if attack_dist else "None"
 
+        # ================================
+        # RESPONSE
+        # ================================
         return jsonify({
             "Total Records": total,
             "Detected Attacks": attacks,
