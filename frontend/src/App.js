@@ -127,30 +127,56 @@ function App() {
             </thead>
 
             <tbody>
-              {results.rows.map(r => (
-                <tr
-                  key={r.ID}
-                  onClick={() => setSelected(r)}
-                  style={{
-                    cursor: "pointer",
-                    backgroundColor:
-                      r.Risk > 80 ? "#ff4d4d" :
-                      r.Risk > 40 ? "#ffd11a" :
-                      "#ccffcc"
-                  }}
-                >
-                  <td>{r.ID}</td>
-                  <td>{r["Source IP"]}</td>
-                  <td>{r["Destination IP"]}</td>
-                  <td>{r["Source Port"]}</td>
-                  <td>{r["Destination Port"]}</td>
-                  <td>{r.Status}</td>
-                  <td>{r["Attack Type"]}</td>
-                  <td>{r["Session Time"]}</td>
-                  <td>{r.Timestamp}</td>
-                  <td>{r.Risk}%</td>
-                </tr>
-              ))}
+              {results.rows.map(r => {
+
+                // ROW COLOR (STATUS)
+                const rowColor =
+                  r.Status === "Attack"
+                    ? "#ff4d4d"
+                    : "#ccffcc";
+
+                // RISK COLOR
+                let riskColor = "#ccffcc";
+                if (r.Risk >= 80) riskColor = "#ff4d4d";
+                else if (r.Risk >= 50) riskColor = "#ffd11a";
+
+                return (
+                  <tr
+                    key={r.ID}
+                    onClick={() => setSelected(r)}
+                    style={{
+                      cursor: "pointer",
+                      backgroundColor: rowColor
+                    }}
+                  >
+                    <td>{r.ID}</td>
+                    <td>{r["Source IP"]}</td>
+                    <td>{r["Destination IP"]}</td>
+                    <td>{r["Source Port"]}</td>
+                    <td>{r["Destination Port"]}</td>
+
+                    <td style={{ fontWeight: "bold" }}>
+                      {r.Status}
+                    </td>
+
+                    <td>{r["Attack Type"]}</td>
+                    <td>{r["Session Time"]}</td>
+                    <td>{r.Timestamp}</td>
+
+                    {/* RISK COLUMN */}
+                    <td
+                      style={{
+                        backgroundColor: riskColor,
+                        color: riskColor === "#ffd11a" ? "#000" : "#fff",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      {r.Risk}%
+                    </td>
+
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
 
@@ -179,7 +205,7 @@ function App() {
                        selected.Risk > 40 ? "#ffd11a" :
                        "#00ff00"
               }}>
-                {selected["Attack Type"].toUpperCase()} DETECTED
+                {(selected["Attack Type"] || "Normal").toUpperCase()} DETECTED
               </h3>
 
               <p><b>Status:</b> {selected.Status}</p>
@@ -205,13 +231,11 @@ function App() {
 
               <hr style={{ borderColor: "#333" }} />
 
-              {/* SAFE REASON */}
               <h4>🔍 Why this attack happened?</h4>
               <p>{selected.Reason || "No detailed reason available"}</p>
 
               <hr style={{ borderColor: "#333" }} />
 
-              {/* SAFE STEPS */}
               <h4>⚙️ Recommended Actions</h4>
 
               {Array.isArray(selected.Steps) ? (
@@ -242,7 +266,6 @@ function App() {
 
       <h2 style={{ marginTop: 40 }}>Analytics</h2>
 
-      {/* PIE */}
       <PieChart width={350} height={300}>
         <Pie data={pieData} dataKey="value" outerRadius={120}>
           <Cell fill="red" />
@@ -252,7 +275,6 @@ function App() {
         <Legend />
       </PieChart>
 
-      {/* BAR */}
       <BarChart width={600} height={300} data={barData}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
@@ -262,7 +284,6 @@ function App() {
         <Bar dataKey="value" fill="#8884d8" />
       </BarChart>
 
-      {/* GRAPH */}
       <div style={{
         background: "black",
         padding: 20,
@@ -274,26 +295,8 @@ function App() {
 
           <CartesianGrid stroke="#333" />
 
-          <XAxis
-            dataKey="time"
-            stroke="#aaa"
-            label={{
-              value: "Time / Network Packets",
-              position: "insideBottom",
-              fill: "#fff"
-            }}
-          />
-
-          <YAxis
-            domain={[0, 1]}
-            stroke="#aaa"
-            label={{
-              value: "Network Activity Level",
-              angle: -90,
-              position: "insideLeft",
-              fill: "#fff"
-            }}
-          />
+          <XAxis dataKey="time" stroke="#aaa" />
+          <YAxis domain={[0, 1]} stroke="#aaa" />
 
           <Tooltip />
           <Legend wrapperStyle={{ color: "white" }} />
@@ -301,7 +304,6 @@ function App() {
           <Line
             type="monotone"
             dataKey="value"
-            name="Network Activity"
             stroke="#00ff00"
             strokeWidth={2}
             dot={false}
@@ -310,7 +312,6 @@ function App() {
           <Line
             type="monotone"
             dataKey="value"
-            name="Attack Spike"
             stroke="#ff0000"
             strokeWidth={3}
             dot={false}
