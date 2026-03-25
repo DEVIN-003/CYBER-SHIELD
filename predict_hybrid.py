@@ -53,13 +53,16 @@ existing = [c for c in categorical_cols if c in X.columns]
 
 X = pd.get_dummies(X, columns=existing)
 
+# Align with training features
 X = X.reindex(columns=feature_columns, fill_value=0)
+
 X = X.apply(pd.to_numeric, errors="coerce").fillna(0)
 
+# Scale
 X = scaler.transform(X)
 
 # ================================
-# 🔥 IMPROVED WEIGHTED ENSEMBLE
+# 🔥 ENSEMBLE PREDICTION
 # ================================
 
 rf_prob = rf.predict_proba(X)
@@ -74,22 +77,42 @@ final_prob = (
     ada_prob * weights["ada"]
 )
 
-# 🔥 CLASS INDEX FIX
+# ================================
+# 🔥 SMART CLASS BALANCING FIX
+# ================================
+
 classes = label_encoder.classes_
 smurf_index = list(classes).index("smurf")
 neptune_index = list(classes).index("neptune")
 
-# 🔥 BOOST SMURF IF CONFUSED WITH NEPTUNE
-for i in range(len(final_prob)):
-    if abs(final_prob[i][smurf_index] - final_prob[i][neptune_index]) < 0.1:
-        final_prob[i][smurf_index] += 0.05
+# 🔥 Global boost for smurf
+final_prob[:, smurf_index] *= 1.3
 
-# Final prediction
+for i in range(len(final_prob)):
+
+    smurf_prob = final_prob[i][smurf_index]
+    neptune_prob = final_prob[i][neptune_index]
+
+    # If smurf is somewhat close → promote
+    if smurf_prob > 0.20 and smurf_prob < neptune_prob:
+        final_prob[i][smurf_index] += 0.25
+
+    # If both are very close → prioritize smurf
+    if abs(smurf_prob - neptune_prob) < 0.15:
+        final_prob[i][smurf_index] += 0.30
+
+    # Normalize probabilities
+    final_prob[i] = final_prob[i] / np.sum(final_prob[i])
+
+# ================================
+# FINAL PREDICTION
+# ================================
+
 final_pred = np.argmax(final_prob, axis=1)
 attack_labels = label_encoder.inverse_transform(final_pred)
 
 # ================================
-# 🔥 ML RISK SCORE
+# 🔥 RISK SCORE
 # ================================
 
 confidence = np.max(final_prob, axis=1)
