@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../components/Sidebar";
+import AppLayout from "../components/AppLayout";
 
 function Firewall() {
 
@@ -62,50 +62,21 @@ function Firewall() {
   };
 
   return (
-    <div>
-      <Sidebar />
+    <AppLayout title="Firewall" subtitle="Trusted and blocked IP management">
+      <div className="glass-card panel-row">
+        <input
+          placeholder="Enter IP manually"
+          value={newIP}
+          onChange={(e) => setNewIP(e.target.value)}
+        />
+        <button onClick={addManualIP} className="primary-btn" type="button">
+          Add IP
+        </button>
+      </div>
 
-      <div className="main">
-
-        <h2 style={{ marginBottom: 20 }}>🔥 Trusted IP Management</h2>
-
-        {/* ADD IP SECTION */}
-        <div style={{
-          background: "#fff",
-          padding: 20,
-          borderRadius: 10,
-          boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-          marginBottom: 20,
-          display: "flex",
-          gap: 10,
-          alignItems: "center"
-        }}>
-          <input
-            placeholder="Enter IP manually"
-            value={newIP}
-            onChange={(e) => setNewIP(e.target.value)}
-            style={{
-              flex: 1,
-              padding: 10,
-              borderRadius: 6,
-              border: "1px solid #ccc"
-            }}
-          />
-
-          <button onClick={addManualIP}>
-            Add IP
-          </button>
-        </div>
-
-        {/* TABLE CARD */}
-        <div style={{
-          background: "#fff",
-          padding: 20,
-          borderRadius: 10,
-          boxShadow: "0 4px 10px rgba(0,0,0,0.1)"
-        }}>
-
-          <table border="1" width="100%">
+      <div className="glass-card table-card">
+        <div className="table-wrap">
+          <table className="data-table">
             <thead>
               <tr>
                 <th>IP Address</th>
@@ -125,23 +96,9 @@ function Firewall() {
 
                     <td>
                       {isBlocked ? (
-                        <span style={{
-                          color: "white",
-                          background: "red",
-                          padding: "4px 10px",
-                          borderRadius: 5
-                        }}>
-                          Blocked
-                        </span>
+                        <span className="tag-red">Blocked</span>
                       ) : (
-                        <span style={{
-                          color: "white",
-                          background: "green",
-                          padding: "4px 10px",
-                          borderRadius: 5
-                        }}>
-                          Allowed
-                        </span>
+                        <span className="tag-green">Allowed</span>
                       )}
                     </td>
 
@@ -149,14 +106,16 @@ function Firewall() {
                       {isBlocked ? (
                         <button
                           onClick={() => allowIP(ip)}
-                          style={{ background: "green" }}
+                          className="primary-btn"
+                          type="button"
                         >
                           Allow
                         </button>
                       ) : (
                         <button
                           onClick={() => blockIP(ip)}
-                          style={{ background: "red" }}
+                          className="danger-btn"
+                          type="button"
                         >
                           Block
                         </button>
@@ -168,11 +127,9 @@ function Firewall() {
               })}
             </tbody>
           </table>
-
         </div>
-
       </div>
-    </div>
+    </AppLayout>
   );
 }
 

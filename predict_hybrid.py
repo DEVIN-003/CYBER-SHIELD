@@ -53,8 +53,11 @@ existing = [c for c in categorical_cols if c in X.columns]
 
 X = pd.get_dummies(X, columns=existing)
 
-# Align with training features
-X = X.reindex(columns=feature_columns, fill_value=0)
+# Align with training/scaler features
+# NOTE: Some saved artifacts (feature_columns.pkl) can be out of sync with the fitted scaler
+# depending on sklearn versions. Prefer the scaler's own expected feature names when present.
+expected_features = getattr(scaler, "feature_names_in_", feature_columns)
+X = X.reindex(columns=expected_features, fill_value=0)
 
 X = X.apply(pd.to_numeric, errors="coerce").fillna(0)
 
@@ -212,4 +215,4 @@ df = pd.DataFrame(results)
 os.makedirs(RESULTS_DIR, exist_ok=True)
 df.to_csv(os.path.join(RESULTS_DIR, "detection_results.csv"), index=False)
 
-print("\n✅ Prediction completed successfully!")
+print("\nPrediction completed successfully!")

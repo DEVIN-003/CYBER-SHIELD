@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
 
 import LoginPage from "./pages/LoginPage";
+import Dashboard from "./pages/Dashboard";
 import UploadPage from "./pages/UploadPage";
 import Alerts from "./pages/Alerts";
 import Analytics from "./pages/Analytics";
@@ -13,6 +15,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/upload" element={<UploadPage />} />
         <Route path="/alerts" element={<Alerts />} />
         <Route path="/analytics" element={<Analytics />} />

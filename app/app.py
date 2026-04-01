@@ -4,6 +4,7 @@ import pandas as pd
 import subprocess
 import os
 import ast   # ✅ SAFE conversion
+import sys
 
 app = Flask(__name__)
 CORS(app)
@@ -34,7 +35,7 @@ def upload():
 
         # Run prediction script
         subprocess.run(
-            ["d:/anaconda/python.exe", PREDICT_SCRIPT],
+            [sys.executable, PREDICT_SCRIPT],
             check=True
         )
 

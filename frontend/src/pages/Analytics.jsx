@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../components/Sidebar";
+import AppLayout from "../components/AppLayout";
 
 import {
   PieChart, Pie, Cell,
@@ -24,12 +24,9 @@ function Analytics() {
 
   if (!results) {
     return (
-      <div>
-        <Sidebar />
-        <div className="main">
-          <h2>No data available. Upload dataset first.</h2>
-        </div>
-      </div>
+      <AppLayout title="Analytics" subtitle="Deep cyber traffic analytics">
+        <div className="glass-card empty-state">No data available. Upload dataset first.</div>
+      </AppLayout>
     );
   }
 
@@ -106,142 +103,93 @@ function Analytics() {
   // ================= UI =================
 
   return (
-    <div>
-      <Sidebar />
-
-      <div className="main">
-
-        <h1>📊 Analytics Dashboard</h1>
-
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
-          gap: "20px",
-          marginTop: "20px"
-        }}>
-
-          {/* Attack Distribution */}
-          <div style={card}>
-            <h3>Attack Distribution</h3>
-            <ResponsiveContainer width="100%" height={250}>
-              <PieChart>
-                <Pie data={pieData} dataKey="value" nameKey="name">
-                  <Cell fill="red" />
-                  <Cell fill="green" />
-                </Pie>
-                <Tooltip />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-
-          {/* Attack Categories */}
-          <div style={card}>
-            <h3>Attack Categories</h3>
-            <ResponsiveContainer width="100%" height={250}>
-              <BarChart data={categoryData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="value" fill="#3b82f6" name="Count" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-
-          {/* Risk Levels */}
-          <div style={card}>
-            <h3>Risk Levels</h3>
-            <ResponsiveContainer width="100%" height={250}>
-              <PieChart>
-                <Pie data={riskData} dataKey="value" nameKey="name">
-                  <Cell fill="red" />
-                  <Cell fill="orange" />
-                  <Cell fill="green" />
-                </Pie>
-                <Tooltip />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-
-          {/* Top IPs */}
-          <div style={card}>
-            <h3>Top Attacking IPs</h3>
-            <ResponsiveContainer width="100%" height={250}>
-              <BarChart data={topIPs}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="ip" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="count" fill="#ef4444" name="Attack Count" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-
-        </div>
-
-        {/* 🔥 FINAL TRAFFIC GRAPH */}
-        <div style={{ ...card, marginTop: 20, background: "black" }}>
-          <h3 style={{ color: "white" }}>Traffic Pattern</h3>
-
-          <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={trafficData}>
-              <CartesianGrid stroke="#333" />
-              <XAxis dataKey="time" stroke="#aaa" />
-              <YAxis domain={[0, 1.1]} stroke="#aaa" />
-              <Tooltip />
-              <Legend wrapperStyle={{ color: "white" }} />
-
-              <Line
-                type="monotone"
-                dataKey="normal"
-                stroke="#00ff00"
-                strokeWidth={2}
-                dot={false}
-                name="Normal Traffic"
-              />
-
-              <Line
-                type="monotone"
-                dataKey="attack"
-                stroke="#ff0000"
-                strokeWidth={3}
-                dot={false}
-                name="Attack Traffic"
-              />
-
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-
-        {/* Port Analysis */}
-        <div style={{ ...card, marginTop: 20 }}>
-          <h3>Port-Based Attack Analysis</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={portData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="port" />
-              <YAxis />
+    <AppLayout title="Analytics" subtitle="Expanded model output analysis">
+      <div className="chart-grid">
+        <div className="glass-card chart-card">
+          <h3>Attack Distribution</h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <PieChart>
+              <Pie data={pieData} dataKey="value" nameKey="name">
+                <Cell fill="#fb7185" />
+                <Cell fill="#34d399" />
+              </Pie>
               <Tooltip />
               <Legend />
-              <Bar dataKey="count" fill="#8b5cf6" name="Attacks per Port" />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="glass-card chart-card">
+          <h3>Attack Categories</h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart data={categoryData}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+              <XAxis dataKey="name" stroke="#94a3b8" />
+              <YAxis stroke="#94a3b8" />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="value" fill="#38bdf8" name="Count" />
             </BarChart>
           </ResponsiveContainer>
         </div>
-
+        <div className="glass-card chart-card">
+          <h3>Risk Levels</h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <PieChart>
+              <Pie data={riskData} dataKey="value" nameKey="name">
+                <Cell fill="#f43f5e" />
+                <Cell fill="#f59e0b" />
+                <Cell fill="#10b981" />
+              </Pie>
+              <Tooltip />
+              <Legend />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="glass-card chart-card">
+          <h3>Top Attacking IPs</h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart data={topIPs}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+              <XAxis dataKey="ip" stroke="#94a3b8" />
+              <YAxis stroke="#94a3b8" />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="count" fill="#f472b6" name="Attack Count" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
-    </div>
+
+      <div className="glass-card chart-card large-chart">
+        <h3>Traffic Pattern</h3>
+        <ResponsiveContainer width="100%" height={380}>
+          <LineChart data={trafficData}>
+            <CartesianGrid stroke="#334155" />
+            <XAxis dataKey="time" stroke="#94a3b8" />
+            <YAxis domain={[0, 1.1]} stroke="#94a3b8" />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="normal" stroke="#22c55e" strokeWidth={2} dot={false} name="Normal Traffic" />
+            <Line type="monotone" dataKey="attack" stroke="#ef4444" strokeWidth={3} dot={false} name="Attack Traffic" />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+
+      <div className="glass-card chart-card">
+        <h3>Port-Based Attack Analysis</h3>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={portData}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+            <XAxis dataKey="port" stroke="#94a3b8" />
+            <YAxis stroke="#94a3b8" />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="count" fill="#8b5cf6" name="Attacks per Port" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </AppLayout>
   );
 }
-
-const card = {
-  background: "#fff",
-  padding: 20,
-  borderRadius: 12,
-  boxShadow: "0 4px 10px rgba(0,0,0,0.1)"
-};
 
 export default Analytics;

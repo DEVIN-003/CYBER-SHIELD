@@ -1,8 +1,7 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Sidebar({ collapsed = false, setCollapsed = () => {} }) {
-
   const navigate = useNavigate();
 
   const logout = () => {
@@ -10,44 +9,49 @@ function Sidebar({ collapsed = false, setCollapsed = () => {} }) {
     navigate("/");
   };
 
+  const navItems = [
+    { to: "/dashboard", label: "Dashboard", icon: "DB" },
+    { to: "/alerts", label: "Alerts", icon: "AL" },
+    { to: "/analytics", label: "Analytics", icon: "AN" },
+    { to: "/firewall", label: "Firewall", icon: "FW" },
+    { to: "/users", label: "Users", icon: "US" },
+    { to: "/upload", label: "Upload", icon: "UP" }
+  ];
+
   return (
-    <div className={`sidebar ${collapsed ? "collapsed" : ""}`}>
-
-      {/* TOGGLE */}
-      <h2
-        style={{ cursor: "pointer" }}
+    <aside className={`sidebar ${collapsed ? "collapsed" : ""}`}>
+      <button
+        className="sidebar-toggle"
         onClick={() => setCollapsed(!collapsed)}
+        type="button"
       >
-        ☰
-      </h2>
+        {collapsed ? ">>" : "<<"}
+      </button>
 
-      {!collapsed && <h2>CyberShield</h2>}
-
-      <Link to="/upload">Upload</Link>
-      <Link to="/alerts">Alerts</Link>
-      <Link to="/analytics">Analytics</Link>
-      <Link to="/firewall">Firewall</Link>
-      <Link to="/users">Users</Link>
-
-      {/* ✅ FIXED LOGOUT POSITION */}
-      <div style={{ marginTop: "40px" }}>
-        <button
-          onClick={logout}
-          style={{
-            width: "100%",
-            padding: "10px",
-            background: "#ef4444",
-            border: "none",
-            borderRadius: "6px",
-            color: "white",
-            cursor: "pointer"
-          }}
-        >
-          Logout
-        </button>
+      <div className="brand-wrap">
+        <div className="brand-mark">CS</div>
+        {!collapsed && <h2>Cyber Shield</h2>}
       </div>
 
-    </div>
+      <nav className="sidebar-nav">
+        {navItems.map((item) => (
+          <NavLink
+            key={item.to}
+            to={item.to}
+            className={({ isActive }) =>
+              `nav-item ${isActive ? "active" : ""}`
+            }
+          >
+            <span className="nav-icon">{item.icon}</span>
+            {!collapsed && <span>{item.label}</span>}
+          </NavLink>
+        ))}
+      </nav>
+
+      <button onClick={logout} className="logout-btn" type="button">
+        {collapsed ? "OUT" : "Logout"}
+      </button>
+    </aside>
   );
 }
 
