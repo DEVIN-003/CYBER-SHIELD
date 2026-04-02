@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ba50fbef-1688-4004-b0da-ac784399694c",
+    "name": "Admin",
+    "email": "admin@gmail.com",
+    "password": "$2b$12$EJgQ.sNa7naF4YTr18jNy.1tKacz6O84VJhSa8eGg/nhtJICxm5I.",
+    "role": "Admin"
+  },
+  {
+    "id": "bf67b4ba-d78b-46df-ab0e-45956ebdea42",
+    "name": "staff",
+    "email": "staff@gmail.com",
+    "password": "$2b$12$QRlq178cVqPjSpCWldqNVei/rqCN7UQcS1dowWobfLQCo6ZpubyYa",
+    "role": "Staff"
+  }
+]

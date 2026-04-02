@@ -1,22 +1,29 @@
 import React, { useState, useEffect } from "react";
 import AppLayout from "../components/AppLayout";
+import { useDataStore } from "../context/DataContext";
 
 function Alerts() {
 
   const [results, setResults] = useState(null);
   const [selected, setSelected] = useState(null);
   const [blocked, setBlocked] = useState([]);
+  const { sharedData, fetchSharedData } = useDataStore();
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("results"));
-    const rows = JSON.parse(localStorage.getItem("rows")) || [];
-
-    setResults({ ...data, rows });
+    const load = async () => {
+      if (sharedData) {
+        setResults(sharedData);
+      } else {
+        const data = await fetchSharedData();
+        if (data) setResults(data);
+      }
+    };
+    load();
 
     const blockedData = JSON.parse(localStorage.getItem("blockedIPs")) || [];
     setBlocked(blockedData);
 
-  }, []);
+  }, [sharedData, fetchSharedData]);
 
   // ✅ NEW FUNCTION (Attack → Category)
   const getAttackCategory = (attack) => {

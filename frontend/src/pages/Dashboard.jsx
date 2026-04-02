@@ -14,15 +14,23 @@ import {
   YAxis
 } from "recharts";
 import AppLayout from "../components/AppLayout";
+import { useDataStore } from "../context/DataContext";
 
 function Dashboard() {
   const [results, setResults] = useState(null);
+  const { sharedData, fetchSharedData } = useDataStore();
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("results"));
-    const rows = JSON.parse(localStorage.getItem("rows")) || [];
-    if (data) setResults({ ...data, rows });
-  }, []);
+    const load = async () => {
+      if (sharedData) {
+        setResults(sharedData);
+        return;
+      }
+      const data = await fetchSharedData();
+      if (data) setResults(data);
+    };
+    load();
+  }, [sharedData, fetchSharedData]);
 
   const summary = useMemo(() => {
     if (!results) return null;

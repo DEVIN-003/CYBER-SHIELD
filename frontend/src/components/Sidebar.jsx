@@ -1,15 +1,17 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Sidebar({ collapsed = false, setCollapsed = () => {} }) {
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
 
-  const logout = () => {
-    localStorage.clear();
+  const onLogout = () => {
+    logout();
     navigate("/");
   };
 
-  const navItems = [
+  const adminItems = [
     { to: "/dashboard", label: "Dashboard", icon: "DB" },
     { to: "/alerts", label: "Alerts", icon: "AL" },
     { to: "/analytics", label: "Analytics", icon: "AN" },
@@ -17,6 +19,10 @@ function Sidebar({ collapsed = false, setCollapsed = () => {} }) {
     { to: "/users", label: "Users", icon: "US" },
     { to: "/upload", label: "Upload", icon: "UP" }
   ];
+  const staffItems = adminItems.filter((item) =>
+    ["/dashboard", "/alerts", "/analytics"].includes(item.to)
+  );
+  const navItems = user?.role === "Admin" ? adminItems : staffItems;
 
   return (
     <aside className={`sidebar ${collapsed ? "collapsed" : ""}`}>
@@ -30,7 +36,12 @@ function Sidebar({ collapsed = false, setCollapsed = () => {} }) {
 
       <div className="brand-wrap">
         <div className="brand-mark">CS</div>
-        {!collapsed && <h2>Cyber Shield</h2>}
+        {!collapsed && (
+          <div>
+            <h2>Cyber Shield</h2>
+            <small className="user-role">{user?.role || "Guest"}</small>
+          </div>
+        )}
       </div>
 
       <nav className="sidebar-nav">
@@ -48,7 +59,7 @@ function Sidebar({ collapsed = false, setCollapsed = () => {} }) {
         ))}
       </nav>
 
-      <button onClick={logout} className="logout-btn" type="button">
+      <button onClick={onLogout} className="logout-btn" type="button">
         {collapsed ? "OUT" : "Logout"}
       </button>
     </aside>

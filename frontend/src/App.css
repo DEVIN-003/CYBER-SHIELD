@@ -68,6 +68,10 @@ input {
   margin: 1rem 0 1.3rem;
 }
 
+.user-role {
+  color: #67e8f9;
+}
+
 .brand-mark {
   width: 42px;
   height: 42px;
@@ -255,7 +259,8 @@ input {
 
 .tag-red,
 .tag-green,
-.tag-cyan {
+.tag-cyan,
+.tag-pink {
   padding: 0.22rem 0.6rem;
   border-radius: 999px;
   font-size: 0.8rem;
@@ -265,11 +270,17 @@ input {
 .tag-red { background: #ef4444; }
 .tag-green { background: #16a34a; }
 .tag-cyan { background: #0891b2; }
+.tag-pink { background: #be185d; }
 
 .panel-row {
   display: flex;
   gap: 0.75rem;
   align-items: center;
+  justify-content: space-between;
+}
+
+.panel-label {
+  color: #cbd5e1;
 }
 
 .primary-btn,
@@ -340,6 +351,23 @@ input {
 .detail-modal {
   max-width: 500px;
   padding: 1.1rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.role-select {
+  width: 100%;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.75);
+  color: #e2e8f0;
+  padding: 0.75rem 0.9rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: flex-end;
 }
 
 .login-page {

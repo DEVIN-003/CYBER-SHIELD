@@ -9,18 +9,61 @@ import Alerts from "./pages/Alerts";
 import Analytics from "./pages/Analytics";
 import Firewall from "./pages/Firewall";
 import Users from "./pages/Users";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/upload" element={<UploadPage />} />
-        <Route path="/alerts" element={<Alerts />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/firewall" element={<Firewall />} />
-        <Route path="/users" element={<Users />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute allowedRoles={["Admin", "Staff"]}>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/alerts"
+          element={
+            <ProtectedRoute allowedRoles={["Admin", "Staff"]}>
+              <Alerts />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/analytics"
+          element={
+            <ProtectedRoute allowedRoles={["Admin", "Staff"]}>
+              <Analytics />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/upload"
+          element={
+            <ProtectedRoute allowedRoles={["Admin"]}>
+              <UploadPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/firewall"
+          element={
+            <ProtectedRoute allowedRoles={["Admin"]}>
+              <Firewall />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/users"
+          element={
+            <ProtectedRoute allowedRoles={["Admin"]}>
+              <Users />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
   );

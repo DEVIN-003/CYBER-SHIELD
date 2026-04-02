@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import AppLayout from "../components/AppLayout";
+import { useDataStore } from "../context/DataContext";
 
 function UploadPage() {
   const [file, setFile] = useState(null);
   const [dragOver, setDragOver] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [progress, setProgress] = useState(0);
+  const { setSharedData } = useDataStore();
 
   const upload = async () => {
     if (!file) {
@@ -27,6 +29,13 @@ function UploadPage() {
     setProgress(80);
     const data = await res.json();
 
+    if (!res.ok) {
+      alert(data.error || "Upload failed");
+      setUploading(false);
+      setProgress(0);
+      return;
+    }
+
     const limitedRows = data.rows.slice(0, 200);
 
     localStorage.setItem("results", JSON.stringify({
@@ -36,6 +45,7 @@ function UploadPage() {
     }));
 
     localStorage.setItem("rows", JSON.stringify(limitedRows));
+    setSharedData({ ...data, rows: limitedRows });
 
     setProgress(100);
     alert("Upload & Analysis Completed ✅");

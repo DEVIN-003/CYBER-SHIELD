@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AppLayout from "../components/AppLayout";
+import { useDataStore } from "../context/DataContext";
 
 import {
   PieChart, Pie, Cell,
@@ -14,13 +15,19 @@ import {
 function Analytics() {
 
   const [results, setResults] = useState(null);
+  const { sharedData, fetchSharedData } = useDataStore();
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("results"));
-    const rows = JSON.parse(localStorage.getItem("rows")) || [];
-
-    setResults({ ...data, rows });
-  }, []);
+    const load = async () => {
+      if (sharedData) {
+        setResults(sharedData);
+      } else {
+        const data = await fetchSharedData();
+        if (data) setResults(data);
+      }
+    };
+    load();
+  }, [sharedData, fetchSharedData]);
 
   if (!results) {
     return (
