@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from flask_socketio import SocketIO
 import pandas as pd
 import subprocess
 import os
@@ -8,9 +9,14 @@ import sys
 import json
 import uuid
 import bcrypt
+try:
+    from live_predictor import predict_live_data
+except ImportError:
+    from app.live_predictor import predict_live_data
 
 app = Flask(__name__)
 CORS(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 # ================================
 # PATH SETUP
@@ -79,6 +85,25 @@ def save_latest_data(data):
 
 
 LATEST_DATA = load_latest_data()
+LIVE_ROWS = []
+
+
+def summarize_rows(rows):
+    attack_dist = {}
+    attacks = 0
+    for row in rows:
+        if row.get("Status") == "Attack":
+            attacks += 1
+        attack_type = row.get("Attack Type", "")
+        attack_dist[attack_type] = attack_dist.get(attack_type, 0) + 1
+    return {
+        "Total Records": len(rows),
+        "Detected Attacks": attacks,
+        "Detected Normal": len(rows) - attacks,
+        "Attack Type Distribution": attack_dist,
+        "Most Frequent Attack": max(attack_dist, key=attack_dist.get) if attack_dist else "None",
+        "rows": rows
+    }
 
 
 @app.route("/login", methods=["POST"])
@@ -233,9 +258,40 @@ def get_data():
     return jsonify(LATEST_DATA)
 
 
+@app.route("/api/live-data", methods=["POST"])
+def ingest_live_data():
+    try:
+        payload = request.get_json(silent=True) or {}
+        if isinstance(payload, dict) and "records" in payload:
+            records = payload.get("records") or []
+        elif isinstance(payload, list):
+            records = payload
+        else:
+            records = [payload] if payload else []
+
+        if not records:
+            return jsonify({"error": "No live records provided"}), 400
+
+        processed = predict_live_data(records)
+
+        global LIVE_ROWS
+        LIVE_ROWS.extend(processed)
+        LIVE_ROWS = LIVE_ROWS[-300:]
+
+        summary = summarize_rows(LIVE_ROWS)
+        socketio.emit("live_update", {
+            "row": processed[-1],
+            "summary": summary
+        })
+        return jsonify({"processed": processed, "summary": summary})
+    except Exception as e:
+        print("LIVE DATA ERROR:", str(e))
+        return jsonify({"error": str(e)}), 500
+
+
 # ================================
 # RUN SERVER
 # ================================
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    socketio.run(app, debug=True)

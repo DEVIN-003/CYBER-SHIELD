@@ -7,7 +7,7 @@ function UploadPage() {
   const [dragOver, setDragOver] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [progress, setProgress] = useState(0);
-  const { setSharedData } = useDataStore();
+  const { setSharedData, setMode } = useDataStore();
 
   const upload = async () => {
     if (!file) {
@@ -46,6 +46,7 @@ function UploadPage() {
 
     localStorage.setItem("rows", JSON.stringify(limitedRows));
     setSharedData({ ...data, rows: limitedRows });
+    setMode("upload");
 
     setProgress(100);
     alert("Upload & Analysis Completed ✅");

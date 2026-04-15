@@ -18,10 +18,23 @@ import { useDataStore } from "../context/DataContext";
 
 function Dashboard() {
   const [results, setResults] = useState(null);
-  const { sharedData, fetchSharedData } = useDataStore();
+  const {
+    sharedData,
+    liveData,
+    mode,
+    fetchSharedData,
+    liveStatus,
+    currentIP,
+    startMonitoring,
+    stopMonitoring
+  } = useDataStore();
 
   useEffect(() => {
     const load = async () => {
+      if (mode === "live" && liveData) {
+        setResults(liveData);
+        return;
+      }
       if (sharedData) {
         setResults(sharedData);
         return;
@@ -30,7 +43,7 @@ function Dashboard() {
       if (data) setResults(data);
     };
     load();
-  }, [sharedData, fetchSharedData]);
+  }, [sharedData, liveData, mode, fetchSharedData]);
 
   const summary = useMemo(() => {
     if (!results) return null;
@@ -96,6 +109,16 @@ function Dashboard() {
 
   return (
     <AppLayout title="Dashboard" subtitle="Real-time threat intelligence view">
+      <section className="glass-card panel-row">
+        <span className="panel-label">Current Mode: {mode === "live" ? "Live" : "Upload"}</span>
+        <span className="panel-label">Live Monitoring Status: {liveStatus}</span>
+        <span className="panel-label">Current IP: {currentIP}</span>
+        <div>
+          <button className="primary-btn" type="button" onClick={startMonitoring}>Start Monitoring</button>
+          <button className="danger-btn" type="button" onClick={stopMonitoring} style={{ marginLeft: 8 }}>Stop Monitoring</button>
+        </div>
+      </section>
+
       <section className="metric-grid">
         <article className="glass-card metric-card">
           <h3>Prediction Result</h3>

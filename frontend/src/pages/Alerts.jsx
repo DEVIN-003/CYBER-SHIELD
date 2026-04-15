@@ -7,10 +7,14 @@ function Alerts() {
   const [results, setResults] = useState(null);
   const [selected, setSelected] = useState(null);
   const [blocked, setBlocked] = useState([]);
-  const { sharedData, fetchSharedData } = useDataStore();
+  const { sharedData, liveData, mode, fetchSharedData } = useDataStore();
 
   useEffect(() => {
     const load = async () => {
+      if (mode === "live" && liveData) {
+        setResults(liveData);
+        return;
+      }
       if (sharedData) {
         setResults(sharedData);
       } else {
@@ -23,7 +27,7 @@ function Alerts() {
     const blockedData = JSON.parse(localStorage.getItem("blockedIPs")) || [];
     setBlocked(blockedData);
 
-  }, [sharedData, fetchSharedData]);
+  }, [sharedData, liveData, mode, fetchSharedData]);
 
   // ✅ NEW FUNCTION (Attack → Category)
   const getAttackCategory = (attack) => {

@@ -15,10 +15,14 @@ import {
 function Analytics() {
 
   const [results, setResults] = useState(null);
-  const { sharedData, fetchSharedData } = useDataStore();
+  const { sharedData, liveData, mode, fetchSharedData } = useDataStore();
 
   useEffect(() => {
     const load = async () => {
+      if (mode === "live" && liveData) {
+        setResults(liveData);
+        return;
+      }
       if (sharedData) {
         setResults(sharedData);
       } else {
@@ -27,7 +31,7 @@ function Analytics() {
       }
     };
     load();
-  }, [sharedData, fetchSharedData]);
+  }, [sharedData, liveData, mode, fetchSharedData]);
 
   if (!results) {
     return (
