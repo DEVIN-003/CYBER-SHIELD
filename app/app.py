@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_socketio import SocketIO
+import warnings
+
 import pandas as pd
 import subprocess
 import os
@@ -9,6 +11,13 @@ import sys
 import json
 import uuid
 import bcrypt
+
+try:
+    from sklearn.exceptions import InconsistentVersionWarning
+    warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
+except Exception:
+    pass
+
 try:
     from live_predictor import predict_live_data
 except ImportError:
@@ -16,7 +25,8 @@ except ImportError:
 
 app = Flask(__name__)
 CORS(app)
-socketio = SocketIO(app, cors_allowed_origins="*")
+# threading avoids eventlet/gevent on Windows (no compiler / VS Build Tools required)
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
 
 # ================================
 # PATH SETUP
@@ -294,4 +304,5 @@ def ingest_live_data():
 # ================================
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True)
+    # allow_unsafe_werkzeug: required by flask-socketio 5.4+ when using the Werkzeug dev server
+    socketio.run(app, debug=True, allow_unsafe_werkzeug=True)

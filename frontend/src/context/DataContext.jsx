@@ -41,7 +41,7 @@ export function DataProvider({ children }) {
     if (socketRef.current) return;
 
     const socket = io("http://127.0.0.1:5000", {
-      transports: ["websocket"]
+      transports: ["websocket", "polling"]
     });
 
     socket.on("live_update", (payload) => {

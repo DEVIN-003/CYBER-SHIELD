@@ -243,6 +243,35 @@ input {
   text-align: left;
 }
 
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border-radius: 12px;
+  scroll-behavior: smooth;
+}
+
+.traffic-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.traffic-table thead th {
+  position: sticky;
+  top: 0;
+  background: #0f172a;
+  z-index: 10;
+  text-align: left;
+  padding: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.traffic-table tbody td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  text-align: left;
+}
+
 .attack-row {
   background: rgba(127, 29, 29, 0.25);
   cursor: pointer;
@@ -413,4 +442,12 @@ input {
   .topbar-badge {
     display: none;
   }
+}
+.table-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.table-container::-webkit-scrollbar {
+  display: none;
 }

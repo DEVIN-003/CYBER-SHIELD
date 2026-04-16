@@ -3,11 +3,12 @@
   "Detected Attacks": 150,
   "Detected Normal": 50,
   "Attack Type Distribution": {
-    "neptune": 100,
-    "": 50,
-    "guess_passwd": 50
+    "smurf": 112,
+    "normal": 50,
+    "neptune": 35,
+    "guess_passwd": 3
   },
-  "Most Frequent Attack": "neptune",
+  "Most Frequent Attack": "smurf",
   "rows": [
     {
       "ID": 1,
@@ -20,15 +21,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 72,
       "Reason": "NEPTUNE attack detected from 192.168.1.91 targeting 172.16.0.95.",
       "Steps": [
-        "Block source IP 192.168.1.91.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.91",
+        "Restrict port 123",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -40,9 +44,12 @@
       "Session Time": 8,
       "Timestamp": "2026-03-21 18:21:13",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 92,
       "Reason": "Normal traffic between 192.168.1.189 and 172.16.0.49.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -57,9 +64,12 @@
       "Session Time": 158,
       "Timestamp": "2026-03-15 12:6:8",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 54,
       "Reason": "Normal traffic between 192.168.1.25 and 172.16.0.178.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -74,17 +84,20 @@
       "Session Time": 55,
       "Timestamp": "2026-03-27 11:10:41",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 67,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.209 targeting 172.16.0.19.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 44,
+      "Reason": "SMURF attack detected from 192.168.1.209 targeting 172.16.0.19.",
       "Steps": [
-        "Block source IP 192.168.1.209.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.209",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -96,17 +109,20 @@
       "Session Time": 82,
       "Timestamp": "2026-03-26 17:38:30",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.121 targeting 172.16.0.31.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 64,
+      "Reason": "SMURF attack detected from 192.168.1.121 targeting 172.16.0.31.",
       "Steps": [
-        "Block source IP 192.168.1.121.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.121",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -118,17 +134,20 @@
       "Session Time": 128,
       "Timestamp": "2026-03-4 3:21:2",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.241 targeting 172.16.0.135.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.241 targeting 172.16.0.135.",
       "Steps": [
-        "Block source IP 192.168.1.241.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.241",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -140,17 +159,20 @@
       "Session Time": 264,
       "Timestamp": "2026-03-13 18:11:22",
       "Status": "Attack",
-      "Attack Type": "neptune",
-      "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.216 targeting 172.16.0.80.",
+      "Attack Type": "guess_passwd",
+      "Category": "R2L",
+      "prediction": "Attack",
+      "attack_type": "guess_passwd",
+      "attack_category": "guess_passwd",
+      "Risk": 42,
+      "Reason": "GUESS_PASSWD attack detected from 192.168.1.216 targeting 172.16.0.80.",
       "Steps": [
-        "Block source IP 192.168.1.216.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.216",
+        "Restrict port 123",
+        "Enable account lockout policy",
+        "Enforce strong password rules",
+        "Enable multi-factor authentication",
+        "Monitor failed login attempts"
       ]
     },
     {
@@ -162,17 +184,20 @@
       "Session Time": 212,
       "Timestamp": "2026-03-8 1:28:13",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 77,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.253 targeting 172.16.0.216.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 63,
+      "Reason": "SMURF attack detected from 192.168.1.253 targeting 172.16.0.216.",
       "Steps": [
-        "Block source IP 192.168.1.253.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.253",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -184,17 +209,20 @@
       "Session Time": 284,
       "Timestamp": "2026-03-12 8:55:10",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.25 targeting 172.16.0.37.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.25 targeting 172.16.0.37.",
       "Steps": [
-        "Block source IP 192.168.1.25.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.25",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -206,9 +234,12 @@
       "Session Time": 300,
       "Timestamp": "2026-03-8 21:37:12",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 51,
       "Reason": "Normal traffic between 192.168.1.128 and 172.16.0.244.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -223,17 +254,20 @@
       "Session Time": 45,
       "Timestamp": "2026-03-26 0:58:51",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 81,
-      "Reason": "NEPTUNE attack detected from 192.168.1.11 targeting 172.16.0.100.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 41,
+      "Reason": "SMURF attack detected from 192.168.1.11 targeting 172.16.0.100.",
       "Steps": [
-        "Block source IP 192.168.1.11.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.11",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -245,17 +279,20 @@
       "Session Time": 123,
       "Timestamp": "2026-03-23 22:7:42",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 67,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.106 targeting 172.16.0.169.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.106 targeting 172.16.0.169.",
       "Steps": [
-        "Block source IP 192.168.1.106.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.106",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -267,17 +304,20 @@
       "Session Time": 73,
       "Timestamp": "2026-03-3 23:52:9",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.76 targeting 172.16.0.13.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 55,
+      "Reason": "SMURF attack detected from 192.168.1.76 targeting 172.16.0.13.",
       "Steps": [
-        "Block source IP 192.168.1.76.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.76",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -291,15 +331,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.57 targeting 172.16.0.247.",
       "Steps": [
-        "Block source IP 192.168.1.57.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.57",
+        "Restrict port 21",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -311,17 +354,20 @@
       "Session Time": 210,
       "Timestamp": "2026-03-11 3:27:19",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.59 targeting 172.16.0.151.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.59 targeting 172.16.0.151.",
       "Steps": [
-        "Block source IP 192.168.1.59.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.59",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -333,17 +379,20 @@
       "Session Time": 91,
       "Timestamp": "2026-03-12 16:18:26",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.254 targeting 172.16.0.38.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.254 targeting 172.16.0.38.",
       "Steps": [
-        "Block source IP 192.168.1.254.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.254",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -355,17 +404,20 @@
       "Session Time": 256,
       "Timestamp": "2026-03-7 8:7:9",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.157 targeting 172.16.0.221.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.157 targeting 172.16.0.221.",
       "Steps": [
-        "Block source IP 192.168.1.157.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.157",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -377,17 +429,20 @@
       "Session Time": 190,
       "Timestamp": "2026-03-7 5:46:53",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 71,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.169 targeting 172.16.0.158.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 60,
+      "Reason": "SMURF attack detected from 192.168.1.169 targeting 172.16.0.158.",
       "Steps": [
-        "Block source IP 192.168.1.169.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.169",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -401,15 +456,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 81,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 76,
       "Reason": "NEPTUNE attack detected from 192.168.1.205 targeting 172.16.0.28.",
       "Steps": [
-        "Block source IP 192.168.1.205.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.205",
+        "Restrict port 21",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -423,15 +481,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.251 targeting 172.16.0.69.",
       "Steps": [
-        "Block source IP 192.168.1.251.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.251",
+        "Restrict port 21",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -443,17 +504,20 @@
       "Session Time": 261,
       "Timestamp": "2026-03-3 15:52:23",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.1 targeting 172.16.0.59.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 53,
+      "Reason": "SMURF attack detected from 192.168.1.1 targeting 172.16.0.59.",
       "Steps": [
-        "Block source IP 192.168.1.1.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.1",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -465,9 +529,12 @@
       "Session Time": 200,
       "Timestamp": "2026-03-8 14:1:30",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 77,
       "Reason": "Normal traffic between 192.168.1.233 and 172.16.0.1.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -482,17 +549,20 @@
       "Session Time": 31,
       "Timestamp": "2026-03-20 0:5:3",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.178 targeting 172.16.0.232.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.178 targeting 172.16.0.232.",
       "Steps": [
-        "Block source IP 192.168.1.178.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.178",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -506,15 +576,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 48,
       "Reason": "NEPTUNE attack detected from 192.168.1.252 targeting 172.16.0.188.",
       "Steps": [
-        "Block source IP 192.168.1.252.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.252",
+        "Restrict port 80",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -528,15 +601,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.119 targeting 172.16.0.38.",
       "Steps": [
-        "Block source IP 192.168.1.119.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.119",
+        "Restrict port 22",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -550,15 +626,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.9 targeting 172.16.0.149.",
       "Steps": [
-        "Block source IP 192.168.1.9.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.9",
+        "Restrict port 123",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -570,17 +649,20 @@
       "Session Time": 101,
       "Timestamp": "2026-03-1 22:17:47",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.38 targeting 172.16.0.33.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 44,
+      "Reason": "SMURF attack detected from 192.168.1.38 targeting 172.16.0.33.",
       "Steps": [
-        "Block source IP 192.168.1.38.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.38",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -592,17 +674,20 @@
       "Session Time": 143,
       "Timestamp": "2026-03-15 13:51:53",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.187 targeting 172.16.0.11.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 43,
+      "Reason": "SMURF attack detected from 192.168.1.187 targeting 172.16.0.11.",
       "Steps": [
-        "Block source IP 192.168.1.187.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.187",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -614,17 +699,20 @@
       "Session Time": 57,
       "Timestamp": "2026-03-21 20:15:40",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.16 targeting 172.16.0.13.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.16 targeting 172.16.0.13.",
       "Steps": [
-        "Block source IP 192.168.1.16.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.16",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -636,17 +724,20 @@
       "Session Time": 24,
       "Timestamp": "2026-03-11 10:1:4",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.245 targeting 172.16.0.196.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 53,
+      "Reason": "SMURF attack detected from 192.168.1.245 targeting 172.16.0.196.",
       "Steps": [
-        "Block source IP 192.168.1.245.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.245",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -658,9 +749,12 @@
       "Session Time": 296,
       "Timestamp": "2026-03-8 7:21:24",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 51,
       "Reason": "Normal traffic between 192.168.1.114 and 172.16.0.99.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -675,9 +769,12 @@
       "Session Time": 188,
       "Timestamp": "2026-03-15 12:24:21",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 52,
       "Reason": "Normal traffic between 192.168.1.47 and 172.16.0.85.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -692,17 +789,20 @@
       "Session Time": 207,
       "Timestamp": "2026-03-5 19:11:58",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 81,
-      "Reason": "NEPTUNE attack detected from 192.168.1.151 targeting 172.16.0.31.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 44,
+      "Reason": "SMURF attack detected from 192.168.1.151 targeting 172.16.0.31.",
       "Steps": [
-        "Block source IP 192.168.1.151.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.151",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -714,17 +814,20 @@
       "Session Time": 28,
       "Timestamp": "2026-03-3 3:10:25",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.104 targeting 172.16.0.255.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.104 targeting 172.16.0.255.",
       "Steps": [
-        "Block source IP 192.168.1.104.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.104",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -736,17 +839,20 @@
       "Session Time": 173,
       "Timestamp": "2026-03-15 18:30:13",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.135 targeting 172.16.0.185.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 56,
+      "Reason": "SMURF attack detected from 192.168.1.135 targeting 172.16.0.185.",
       "Steps": [
-        "Block source IP 192.168.1.135.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.135",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -758,17 +864,20 @@
       "Session Time": 188,
       "Timestamp": "2026-03-25 20:48:45",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.241 targeting 172.16.0.127.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.241 targeting 172.16.0.127.",
       "Steps": [
-        "Block source IP 192.168.1.241.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.241",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -780,17 +889,20 @@
       "Session Time": 120,
       "Timestamp": "2026-03-22 9:57:35",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.126 targeting 172.16.0.247.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 77,
+      "Reason": "SMURF attack detected from 192.168.1.126 targeting 172.16.0.247.",
       "Steps": [
-        "Block source IP 192.168.1.126.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.126",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -802,17 +914,20 @@
       "Session Time": 48,
       "Timestamp": "2026-03-20 10:32:47",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.91 targeting 172.16.0.105.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.91 targeting 172.16.0.105.",
       "Steps": [
-        "Block source IP 192.168.1.91.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.91",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -824,17 +939,20 @@
       "Session Time": 142,
       "Timestamp": "2026-03-23 15:33:0",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 69,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.229 targeting 172.16.0.187.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 56,
+      "Reason": "SMURF attack detected from 192.168.1.229 targeting 172.16.0.187.",
       "Steps": [
-        "Block source IP 192.168.1.229.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.229",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -848,15 +966,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 81,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.40 targeting 172.16.0.197.",
       "Steps": [
-        "Block source IP 192.168.1.40.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.40",
+        "Restrict port 53",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -870,15 +991,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 74,
       "Reason": "NEPTUNE attack detected from 192.168.1.84 targeting 172.16.0.234.",
       "Steps": [
-        "Block source IP 192.168.1.84.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.84",
+        "Restrict port 22",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -890,17 +1014,20 @@
       "Session Time": 288,
       "Timestamp": "2026-03-21 4:32:41",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 67,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.155 targeting 172.16.0.36.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 44,
+      "Reason": "SMURF attack detected from 192.168.1.155 targeting 172.16.0.36.",
       "Steps": [
-        "Block source IP 192.168.1.155.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.155",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -912,9 +1039,12 @@
       "Session Time": 138,
       "Timestamp": "2026-03-21 3:40:26",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 57,
       "Reason": "Normal traffic between 192.168.1.248 and 172.16.0.69.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -929,9 +1059,12 @@
       "Session Time": 210,
       "Timestamp": "2026-03-19 7:5:27",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 53,
       "Reason": "Normal traffic between 192.168.1.198 and 172.16.0.6.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -946,17 +1079,20 @@
       "Session Time": 137,
       "Timestamp": "2026-03-9 11:57:30",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.157 targeting 172.16.0.213.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.157 targeting 172.16.0.213.",
       "Steps": [
-        "Block source IP 192.168.1.157.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.157",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -968,17 +1104,20 @@
       "Session Time": 219,
       "Timestamp": "2026-03-7 19:41:16",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 69,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.219 targeting 172.16.0.177.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.219 targeting 172.16.0.177.",
       "Steps": [
-        "Block source IP 192.168.1.219.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.219",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -990,9 +1129,12 @@
       "Session Time": 151,
       "Timestamp": "2026-03-14 1:41:12",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 52,
       "Reason": "Normal traffic between 192.168.1.65 and 172.16.0.157.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1007,9 +1149,12 @@
       "Session Time": 269,
       "Timestamp": "2026-03-23 4:10:29",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 66,
       "Reason": "Normal traffic between 192.168.1.210 and 172.16.0.18.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1024,17 +1169,20 @@
       "Session Time": 254,
       "Timestamp": "2026-03-25 7:59:39",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.250 targeting 172.16.0.56.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.250 targeting 172.16.0.56.",
       "Steps": [
-        "Block source IP 192.168.1.250.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.250",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1048,15 +1196,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.158 targeting 172.16.0.150.",
       "Steps": [
-        "Block source IP 192.168.1.158.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.158",
+        "Restrict port 123",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -1068,17 +1219,20 @@
       "Session Time": 116,
       "Timestamp": "2026-03-5 8:8:17",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.133 targeting 172.16.0.250.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 54,
+      "Reason": "SMURF attack detected from 192.168.1.133 targeting 172.16.0.250.",
       "Steps": [
-        "Block source IP 192.168.1.133.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.133",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1090,17 +1244,20 @@
       "Session Time": 285,
       "Timestamp": "2026-03-4 11:58:28",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 73,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.50 targeting 172.16.0.113.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.50 targeting 172.16.0.113.",
       "Steps": [
-        "Block source IP 192.168.1.50.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.50",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1112,9 +1269,12 @@
       "Session Time": 20,
       "Timestamp": "2026-03-1 11:41:36",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 91,
       "Reason": "Normal traffic between 192.168.1.63 and 172.16.0.59.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1129,17 +1289,20 @@
       "Session Time": 106,
       "Timestamp": "2026-03-8 3:11:55",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 55,
-      "Reason": "NEPTUNE attack detected from 192.168.1.85 targeting 172.16.0.89.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.85 targeting 172.16.0.89.",
       "Steps": [
-        "Block source IP 192.168.1.85.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.85",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1151,17 +1314,20 @@
       "Session Time": 154,
       "Timestamp": "2026-03-13 22:37:10",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.98 targeting 172.16.0.5.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.98 targeting 172.16.0.5.",
       "Steps": [
-        "Block source IP 192.168.1.98.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.98",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1175,15 +1341,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.237 targeting 172.16.0.172.",
       "Steps": [
-        "Block source IP 192.168.1.237.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.237",
+        "Restrict port 22",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -1195,17 +1364,20 @@
       "Session Time": 45,
       "Timestamp": "2026-03-3 13:47:31",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.152 targeting 172.16.0.43.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 77,
+      "Reason": "SMURF attack detected from 192.168.1.152 targeting 172.16.0.43.",
       "Steps": [
-        "Block source IP 192.168.1.152.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.152",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1217,17 +1389,20 @@
       "Session Time": 265,
       "Timestamp": "2026-03-12 19:59:56",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.174 targeting 172.16.0.231.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 46,
+      "Reason": "SMURF attack detected from 192.168.1.174 targeting 172.16.0.231.",
       "Steps": [
-        "Block source IP 192.168.1.174.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.174",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1239,17 +1414,20 @@
       "Session Time": 58,
       "Timestamp": "2026-03-19 3:16:27",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.170 targeting 172.16.0.135.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 73,
+      "Reason": "SMURF attack detected from 192.168.1.170 targeting 172.16.0.135.",
       "Steps": [
-        "Block source IP 192.168.1.170.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.170",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1263,15 +1441,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.32 targeting 172.16.0.205.",
       "Steps": [
-        "Block source IP 192.168.1.32.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.32",
+        "Restrict port 53",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -1283,17 +1464,20 @@
       "Session Time": 20,
       "Timestamp": "2026-03-15 19:47:56",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.245 targeting 172.16.0.252.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 53,
+      "Reason": "SMURF attack detected from 192.168.1.245 targeting 172.16.0.252.",
       "Steps": [
-        "Block source IP 192.168.1.245.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.245",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1307,15 +1491,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 39,
       "Reason": "NEPTUNE attack detected from 192.168.1.170 targeting 172.16.0.22.",
       "Steps": [
-        "Block source IP 192.168.1.170.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.170",
+        "Restrict port 123",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -1327,9 +1514,12 @@
       "Session Time": 142,
       "Timestamp": "2026-03-2 4:51:25",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 80,
       "Reason": "Normal traffic between 192.168.1.33 and 172.16.0.242.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1344,9 +1534,12 @@
       "Session Time": 275,
       "Timestamp": "2026-03-17 20:44:57",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 54,
       "Reason": "Normal traffic between 192.168.1.5 and 172.16.0.230.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1361,9 +1554,12 @@
       "Session Time": 159,
       "Timestamp": "2026-03-24 20:7:34",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 89,
       "Reason": "Normal traffic between 192.168.1.69 and 172.16.0.37.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1378,17 +1574,20 @@
       "Session Time": 181,
       "Timestamp": "2026-03-26 3:7:5",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.82 targeting 172.16.0.10.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.82 targeting 172.16.0.10.",
       "Steps": [
-        "Block source IP 192.168.1.82.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.82",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1400,9 +1599,12 @@
       "Session Time": 107,
       "Timestamp": "2026-03-1 6:44:52",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 51,
       "Reason": "Normal traffic between 192.168.1.120 and 172.16.0.227.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1417,17 +1619,20 @@
       "Session Time": 14,
       "Timestamp": "2026-03-2 6:47:39",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.65 targeting 172.16.0.245.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 72,
+      "Reason": "SMURF attack detected from 192.168.1.65 targeting 172.16.0.245.",
       "Steps": [
-        "Block source IP 192.168.1.65.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.65",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1441,15 +1646,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.52 targeting 172.16.0.244.",
       "Steps": [
-        "Block source IP 192.168.1.52.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.52",
+        "Restrict port 123",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -1461,17 +1669,20 @@
       "Session Time": 223,
       "Timestamp": "2026-03-17 4:51:0",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.154 targeting 172.16.0.156.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 66,
+      "Reason": "SMURF attack detected from 192.168.1.154 targeting 172.16.0.156.",
       "Steps": [
-        "Block source IP 192.168.1.154.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.154",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1483,17 +1694,20 @@
       "Session Time": 74,
       "Timestamp": "2026-03-12 2:56:23",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 81,
-      "Reason": "NEPTUNE attack detected from 192.168.1.216 targeting 172.16.0.220.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.216 targeting 172.16.0.220.",
       "Steps": [
-        "Block source IP 192.168.1.216.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.216",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1505,17 +1719,20 @@
       "Session Time": 279,
       "Timestamp": "2026-03-11 7:9:25",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.161 targeting 172.16.0.2.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 66,
+      "Reason": "SMURF attack detected from 192.168.1.161 targeting 172.16.0.2.",
       "Steps": [
-        "Block source IP 192.168.1.161.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.161",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1527,17 +1744,20 @@
       "Session Time": 250,
       "Timestamp": "2026-03-1 15:57:31",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 67,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.231 targeting 172.16.0.176.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 43,
+      "Reason": "SMURF attack detected from 192.168.1.231 targeting 172.16.0.176.",
       "Steps": [
-        "Block source IP 192.168.1.231.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.231",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1549,9 +1769,12 @@
       "Session Time": 261,
       "Timestamp": "2026-03-8 14:33:1",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 53,
       "Reason": "Normal traffic between 192.168.1.105 and 172.16.0.91.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1566,17 +1789,20 @@
       "Session Time": 65,
       "Timestamp": "2026-03-13 14:19:30",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.70 targeting 172.16.0.115.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 54,
+      "Reason": "SMURF attack detected from 192.168.1.70 targeting 172.16.0.115.",
       "Steps": [
-        "Block source IP 192.168.1.70.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.70",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1588,17 +1814,20 @@
       "Session Time": 223,
       "Timestamp": "2026-03-1 18:24:1",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.168 targeting 172.16.0.165.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.168 targeting 172.16.0.165.",
       "Steps": [
-        "Block source IP 192.168.1.168.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.168",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1610,9 +1839,12 @@
       "Session Time": 39,
       "Timestamp": "2026-03-13 13:19:37",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 83,
       "Reason": "Normal traffic between 192.168.1.36 and 172.16.0.153.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1627,17 +1859,20 @@
       "Session Time": 279,
       "Timestamp": "2026-03-18 0:21:42",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.126 targeting 172.16.0.3.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.126 targeting 172.16.0.3.",
       "Steps": [
-        "Block source IP 192.168.1.126.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.126",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1649,17 +1884,20 @@
       "Session Time": 34,
       "Timestamp": "2026-03-10 0:43:10",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.177 targeting 172.16.0.135.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.177 targeting 172.16.0.135.",
       "Steps": [
-        "Block source IP 192.168.1.177.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.177",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1671,17 +1909,20 @@
       "Session Time": 127,
       "Timestamp": "2026-03-23 10:37:36",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.156 targeting 172.16.0.79.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.156 targeting 172.16.0.79.",
       "Steps": [
-        "Block source IP 192.168.1.156.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.156",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1693,9 +1934,12 @@
       "Session Time": 271,
       "Timestamp": "2026-03-14 5:5:14",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 83,
       "Reason": "Normal traffic between 192.168.1.50 and 172.16.0.173.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1712,15 +1956,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.239 targeting 172.16.0.96.",
       "Steps": [
-        "Block source IP 192.168.1.239.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.239",
+        "Restrict port 22",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -1732,9 +1979,12 @@
       "Session Time": 18,
       "Timestamp": "2026-03-26 22:31:2",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 91,
       "Reason": "Normal traffic between 192.168.1.159 and 172.16.0.210.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1749,17 +1999,20 @@
       "Session Time": 161,
       "Timestamp": "2026-03-13 14:30:25",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 69,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.127 targeting 172.16.0.124.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.127 targeting 172.16.0.124.",
       "Steps": [
-        "Block source IP 192.168.1.127.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.127",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1771,17 +2024,20 @@
       "Session Time": 11,
       "Timestamp": "2026-03-4 11:38:7",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.206 targeting 172.16.0.207.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 62,
+      "Reason": "SMURF attack detected from 192.168.1.206 targeting 172.16.0.207.",
       "Steps": [
-        "Block source IP 192.168.1.206.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.206",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1795,15 +2051,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 40,
       "Reason": "NEPTUNE attack detected from 192.168.1.88 targeting 172.16.0.9.",
       "Steps": [
-        "Block source IP 192.168.1.88.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.88",
+        "Restrict port 22",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -1815,17 +2074,20 @@
       "Session Time": 234,
       "Timestamp": "2026-03-22 9:52:26",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 73,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.39 targeting 172.16.0.119.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.39 targeting 172.16.0.119.",
       "Steps": [
-        "Block source IP 192.168.1.39.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.39",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1837,9 +2099,12 @@
       "Session Time": 103,
       "Timestamp": "2026-03-19 8:20:12",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 77,
       "Reason": "Normal traffic between 192.168.1.82 and 172.16.0.184.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1854,17 +2119,20 @@
       "Session Time": 162,
       "Timestamp": "2026-03-4 20:49:47",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.243 targeting 172.16.0.103.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 49,
+      "Reason": "SMURF attack detected from 192.168.1.243 targeting 172.16.0.103.",
       "Steps": [
-        "Block source IP 192.168.1.243.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.243",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1878,15 +2146,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 74,
       "Reason": "NEPTUNE attack detected from 192.168.1.198 targeting 172.16.0.16.",
       "Steps": [
-        "Block source IP 192.168.1.198.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.198",
+        "Restrict port 22",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -1898,9 +2169,12 @@
       "Session Time": 117,
       "Timestamp": "2026-03-17 6:22:53",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 51,
       "Reason": "Normal traffic between 192.168.1.19 and 172.16.0.59.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1915,17 +2189,20 @@
       "Session Time": 34,
       "Timestamp": "2026-03-10 3:7:40",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.89 targeting 172.16.0.207.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 77,
+      "Reason": "SMURF attack detected from 192.168.1.89 targeting 172.16.0.207.",
       "Steps": [
-        "Block source IP 192.168.1.89.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.89",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1937,17 +2214,20 @@
       "Session Time": 92,
       "Timestamp": "2026-03-4 10:50:24",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.75 targeting 172.16.0.236.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 74,
+      "Reason": "SMURF attack detected from 192.168.1.75 targeting 172.16.0.236.",
       "Steps": [
-        "Block source IP 192.168.1.75.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.75",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -1959,9 +2239,12 @@
       "Session Time": 268,
       "Timestamp": "2026-03-26 15:22:25",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 90,
       "Reason": "Normal traffic between 192.168.1.154 and 172.16.0.60.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1976,9 +2259,12 @@
       "Session Time": 86,
       "Timestamp": "2026-03-5 4:3:6",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 89,
       "Reason": "Normal traffic between 192.168.1.196 and 172.16.0.221.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -1993,17 +2279,20 @@
       "Session Time": 158,
       "Timestamp": "2026-03-5 13:21:41",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 67,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.71 targeting 172.16.0.65.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.71 targeting 172.16.0.65.",
       "Steps": [
-        "Block source IP 192.168.1.71.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.71",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2015,17 +2304,20 @@
       "Session Time": 294,
       "Timestamp": "2026-03-5 20:40:11",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.190 targeting 172.16.0.188.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 46,
+      "Reason": "SMURF attack detected from 192.168.1.190 targeting 172.16.0.188.",
       "Steps": [
-        "Block source IP 192.168.1.190.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.190",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2037,9 +2329,12 @@
       "Session Time": 27,
       "Timestamp": "2026-03-1 13:56:54",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 51,
       "Reason": "Normal traffic between 192.168.1.164 and 172.16.0.90.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2054,9 +2349,12 @@
       "Session Time": 163,
       "Timestamp": "2026-03-3 8:23:32",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 72,
       "Reason": "Normal traffic between 192.168.1.19 and 172.16.0.62.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2071,17 +2369,20 @@
       "Session Time": 16,
       "Timestamp": "2026-03-19 15:26:10",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.63 targeting 172.16.0.182.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 77,
+      "Reason": "SMURF attack detected from 192.168.1.63 targeting 172.16.0.182.",
       "Steps": [
-        "Block source IP 192.168.1.63.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.63",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2093,9 +2394,12 @@
       "Session Time": 296,
       "Timestamp": "2026-03-8 16:0:59",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 85,
       "Reason": "Normal traffic between 192.168.1.85 and 172.16.0.179.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2110,9 +2414,12 @@
       "Session Time": 175,
       "Timestamp": "2026-03-20 6:38:17",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 57,
       "Reason": "Normal traffic between 192.168.1.37 and 172.16.0.252.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2127,17 +2434,20 @@
       "Session Time": 23,
       "Timestamp": "2026-03-21 6:41:18",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 55,
-      "Reason": "NEPTUNE attack detected from 192.168.1.168 targeting 172.16.0.29.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.168 targeting 172.16.0.29.",
       "Steps": [
-        "Block source IP 192.168.1.168.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.168",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2149,17 +2459,20 @@
       "Session Time": 92,
       "Timestamp": "2026-03-13 0:43:28",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.88 targeting 172.16.0.43.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.88 targeting 172.16.0.43.",
       "Steps": [
-        "Block source IP 192.168.1.88.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.88",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2171,17 +2484,20 @@
       "Session Time": 239,
       "Timestamp": "2026-03-8 4:35:50",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.12 targeting 172.16.0.109.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 55,
+      "Reason": "SMURF attack detected from 192.168.1.12 targeting 172.16.0.109.",
       "Steps": [
-        "Block source IP 192.168.1.12.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.12",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2193,17 +2509,20 @@
       "Session Time": 275,
       "Timestamp": "2026-03-27 3:8:15",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 58,
-      "Reason": "NEPTUNE attack detected from 192.168.1.88 targeting 172.16.0.142.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 54,
+      "Reason": "SMURF attack detected from 192.168.1.88 targeting 172.16.0.142.",
       "Steps": [
-        "Block source IP 192.168.1.88.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.88",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2215,9 +2534,12 @@
       "Session Time": 227,
       "Timestamp": "2026-03-7 16:4:24",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 61,
       "Reason": "Normal traffic between 192.168.1.55 and 172.16.0.3.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2234,15 +2556,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.125 targeting 172.16.0.54.",
       "Steps": [
-        "Block source IP 192.168.1.125.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.125",
+        "Restrict port 22",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -2254,17 +2579,20 @@
       "Session Time": 262,
       "Timestamp": "2026-03-1 22:43:48",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.92 targeting 172.16.0.94.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.92 targeting 172.16.0.94.",
       "Steps": [
-        "Block source IP 192.168.1.92.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.92",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2276,17 +2604,20 @@
       "Session Time": 292,
       "Timestamp": "2026-03-13 10:41:17",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.127 targeting 172.16.0.176.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.127 targeting 172.16.0.176.",
       "Steps": [
-        "Block source IP 192.168.1.127.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.127",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2298,17 +2629,20 @@
       "Session Time": 142,
       "Timestamp": "2026-03-16 1:5:36",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.168 targeting 172.16.0.45.",
+      "Attack Type": "neptune",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 39,
+      "Reason": "NEPTUNE attack detected from 192.168.1.168 targeting 172.16.0.45.",
       "Steps": [
-        "Block source IP 192.168.1.168.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.168",
+        "Restrict port 53",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -2320,9 +2654,12 @@
       "Session Time": 115,
       "Timestamp": "2026-03-26 16:8:24",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 81,
       "Reason": "Normal traffic between 192.168.1.176 and 172.16.0.77.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2337,17 +2674,20 @@
       "Session Time": 38,
       "Timestamp": "2026-03-18 2:25:59",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 67,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.189 targeting 172.16.0.146.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 42,
+      "Reason": "SMURF attack detected from 192.168.1.189 targeting 172.16.0.146.",
       "Steps": [
-        "Block source IP 192.168.1.189.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.189",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2359,17 +2699,20 @@
       "Session Time": 92,
       "Timestamp": "2026-03-1 9:52:56",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 72,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.228 targeting 172.16.0.148.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.228 targeting 172.16.0.148.",
       "Steps": [
-        "Block source IP 192.168.1.228.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.228",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2383,15 +2726,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 76,
       "Reason": "NEPTUNE attack detected from 192.168.1.8 targeting 172.16.0.247.",
       "Steps": [
-        "Block source IP 192.168.1.8.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.8",
+        "Restrict port 53",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -2403,17 +2749,20 @@
       "Session Time": 4,
       "Timestamp": "2026-03-28 8:40:47",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.115 targeting 172.16.0.22.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.115 targeting 172.16.0.22.",
       "Steps": [
-        "Block source IP 192.168.1.115.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.115",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2427,15 +2776,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.248 targeting 172.16.0.163.",
       "Steps": [
-        "Block source IP 192.168.1.248.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.248",
+        "Restrict port 22",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -2447,9 +2799,12 @@
       "Session Time": 249,
       "Timestamp": "2026-03-10 1:26:48",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 89,
       "Reason": "Normal traffic between 192.168.1.84 and 172.16.0.90.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2464,17 +2819,20 @@
       "Session Time": 186,
       "Timestamp": "2026-03-9 11:22:38",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.233 targeting 172.16.0.125.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 44,
+      "Reason": "SMURF attack detected from 192.168.1.233 targeting 172.16.0.125.",
       "Steps": [
-        "Block source IP 192.168.1.233.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.233",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2486,9 +2844,12 @@
       "Session Time": 134,
       "Timestamp": "2026-03-11 2:36:31",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 79,
       "Reason": "Normal traffic between 192.168.1.172 and 172.16.0.79.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2503,9 +2864,12 @@
       "Session Time": 112,
       "Timestamp": "2026-03-13 6:18:41",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 52,
       "Reason": "Normal traffic between 192.168.1.119 and 172.16.0.108.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2520,17 +2884,20 @@
       "Session Time": 100,
       "Timestamp": "2026-03-5 11:11:2",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.31 targeting 172.16.0.32.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 54,
+      "Reason": "SMURF attack detected from 192.168.1.31 targeting 172.16.0.32.",
       "Steps": [
-        "Block source IP 192.168.1.31.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.31",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2542,17 +2909,20 @@
       "Session Time": 32,
       "Timestamp": "2026-03-13 1:40:56",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 52,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.135 targeting 172.16.0.220.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 46,
+      "Reason": "SMURF attack detected from 192.168.1.135 targeting 172.16.0.220.",
       "Steps": [
-        "Block source IP 192.168.1.135.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.135",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2564,17 +2934,20 @@
       "Session Time": 126,
       "Timestamp": "2026-03-2 13:41:25",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.18 targeting 172.16.0.247.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.18 targeting 172.16.0.247.",
       "Steps": [
-        "Block source IP 192.168.1.18.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.18",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2586,9 +2959,12 @@
       "Session Time": 222,
       "Timestamp": "2026-03-23 22:7:4",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 84,
       "Reason": "Normal traffic between 192.168.1.116 and 172.16.0.6.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2603,9 +2979,12 @@
       "Session Time": 99,
       "Timestamp": "2026-03-3 16:22:10",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 52,
       "Reason": "Normal traffic between 192.168.1.76 and 172.16.0.56.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2620,17 +2999,20 @@
       "Session Time": 55,
       "Timestamp": "2026-03-8 2:2:50",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 67,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.202 targeting 172.16.0.103.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 44,
+      "Reason": "SMURF attack detected from 192.168.1.202 targeting 172.16.0.103.",
       "Steps": [
-        "Block source IP 192.168.1.202.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.202",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2642,17 +3024,20 @@
       "Session Time": 251,
       "Timestamp": "2026-03-18 20:54:11",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.8 targeting 172.16.0.38.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 74,
+      "Reason": "SMURF attack detected from 192.168.1.8 targeting 172.16.0.38.",
       "Steps": [
-        "Block source IP 192.168.1.8.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.8",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2664,17 +3049,20 @@
       "Session Time": 216,
       "Timestamp": "2026-03-15 16:38:19",
       "Status": "Attack",
-      "Attack Type": "neptune",
-      "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.111 targeting 172.16.0.189.",
+      "Attack Type": "guess_passwd",
+      "Category": "R2L",
+      "prediction": "Attack",
+      "attack_type": "guess_passwd",
+      "attack_category": "guess_passwd",
+      "Risk": 42,
+      "Reason": "GUESS_PASSWD attack detected from 192.168.1.111 targeting 172.16.0.189.",
       "Steps": [
-        "Block source IP 192.168.1.111.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.111",
+        "Restrict port 22",
+        "Enable account lockout policy",
+        "Enforce strong password rules",
+        "Enable multi-factor authentication",
+        "Monitor failed login attempts"
       ]
     },
     {
@@ -2686,9 +3074,12 @@
       "Session Time": 242,
       "Timestamp": "2026-03-24 0:15:27",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 52,
       "Reason": "Normal traffic between 192.168.1.183 and 172.16.0.30.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2703,17 +3094,20 @@
       "Session Time": 115,
       "Timestamp": "2026-03-22 3:7:31",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
       "Risk": 75,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.156 targeting 172.16.0.96.",
+      "Reason": "SMURF attack detected from 192.168.1.156 targeting 172.16.0.96.",
       "Steps": [
-        "Block source IP 192.168.1.156.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.156",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2725,9 +3119,12 @@
       "Session Time": 82,
       "Timestamp": "2026-03-12 13:5:45",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 80,
       "Reason": "Normal traffic between 192.168.1.180 and 172.16.0.48.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2744,15 +3141,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.227 targeting 172.16.0.26.",
       "Steps": [
-        "Block source IP 192.168.1.227.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.227",
+        "Restrict port 21",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -2764,17 +3164,20 @@
       "Session Time": 235,
       "Timestamp": "2026-03-17 15:2:0",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.229 targeting 172.16.0.141.",
+      "Attack Type": "neptune",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 38,
+      "Reason": "NEPTUNE attack detected from 192.168.1.229 targeting 172.16.0.141.",
       "Steps": [
-        "Block source IP 192.168.1.229.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.229",
+        "Restrict port 22",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -2786,9 +3189,12 @@
       "Session Time": 36,
       "Timestamp": "2026-03-26 6:39:46",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 90,
       "Reason": "Normal traffic between 192.168.1.137 and 172.16.0.65.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2803,17 +3209,20 @@
       "Session Time": 110,
       "Timestamp": "2026-03-23 1:50:4",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.146 targeting 172.16.0.166.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 73,
+      "Reason": "SMURF attack detected from 192.168.1.146 targeting 172.16.0.166.",
       "Steps": [
-        "Block source IP 192.168.1.146.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.146",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2825,9 +3234,12 @@
       "Session Time": 90,
       "Timestamp": "2026-03-6 22:13:16",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 68,
       "Reason": "Normal traffic between 192.168.1.178 and 172.16.0.6.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2842,17 +3254,20 @@
       "Session Time": 148,
       "Timestamp": "2026-03-25 20:18:27",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 58,
-      "Reason": "NEPTUNE attack detected from 192.168.1.175 targeting 172.16.0.34.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 54,
+      "Reason": "SMURF attack detected from 192.168.1.175 targeting 172.16.0.34.",
       "Steps": [
-        "Block source IP 192.168.1.175.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.175",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2866,15 +3281,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 81,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 76,
       "Reason": "NEPTUNE attack detected from 192.168.1.25 targeting 172.16.0.17.",
       "Steps": [
-        "Block source IP 192.168.1.25.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.25",
+        "Restrict port 21",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -2886,17 +3304,20 @@
       "Session Time": 80,
       "Timestamp": "2026-03-2 1:44:8",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.236 targeting 172.16.0.220.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.236 targeting 172.16.0.220.",
       "Steps": [
-        "Block source IP 192.168.1.236.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.236",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2908,17 +3329,20 @@
       "Session Time": 208,
       "Timestamp": "2026-03-17 3:36:28",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 67,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.125 targeting 172.16.0.192.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.125 targeting 172.16.0.192.",
       "Steps": [
-        "Block source IP 192.168.1.125.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.125",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2930,17 +3354,20 @@
       "Session Time": 188,
       "Timestamp": "2026-03-5 8:56:42",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 72,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.25 targeting 172.16.0.120.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.25 targeting 172.16.0.120.",
       "Steps": [
-        "Block source IP 192.168.1.25.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.25",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2952,17 +3379,20 @@
       "Session Time": 66,
       "Timestamp": "2026-03-18 12:14:39",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 64,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.61 targeting 172.16.0.48.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 70,
+      "Reason": "SMURF attack detected from 192.168.1.61 targeting 172.16.0.48.",
       "Steps": [
-        "Block source IP 192.168.1.61.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.61",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -2974,9 +3404,12 @@
       "Session Time": 71,
       "Timestamp": "2026-03-10 20:35:38",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 89,
       "Reason": "Normal traffic between 192.168.1.65 and 172.16.0.126.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -2991,17 +3424,20 @@
       "Session Time": 140,
       "Timestamp": "2026-03-16 15:59:24",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 81,
-      "Reason": "NEPTUNE attack detected from 192.168.1.92 targeting 172.16.0.223.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.92 targeting 172.16.0.223.",
       "Steps": [
-        "Block source IP 192.168.1.92.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.92",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3013,9 +3449,12 @@
       "Session Time": 257,
       "Timestamp": "2026-03-28 17:13:11",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 52,
       "Reason": "Normal traffic between 192.168.1.74 and 172.16.0.89.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -3030,9 +3469,12 @@
       "Session Time": 25,
       "Timestamp": "2026-03-19 4:40:17",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 51,
       "Reason": "Normal traffic between 192.168.1.214 and 172.16.0.212.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -3047,17 +3489,20 @@
       "Session Time": 191,
       "Timestamp": "2026-03-14 16:24:54",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 58,
-      "Reason": "NEPTUNE attack detected from 192.168.1.28 targeting 172.16.0.157.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 52,
+      "Reason": "SMURF attack detected from 192.168.1.28 targeting 172.16.0.157.",
       "Steps": [
-        "Block source IP 192.168.1.28.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.28",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3071,15 +3516,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 74,
       "Reason": "NEPTUNE attack detected from 192.168.1.35 targeting 172.16.0.190.",
       "Steps": [
-        "Block source IP 192.168.1.35.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.35",
+        "Restrict port 22",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -3091,17 +3539,20 @@
       "Session Time": 90,
       "Timestamp": "2026-03-4 8:52:26",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.77 targeting 172.16.0.101.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.77 targeting 172.16.0.101.",
       "Steps": [
-        "Block source IP 192.168.1.77.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.77",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3113,17 +3564,20 @@
       "Session Time": 13,
       "Timestamp": "2026-03-17 14:44:49",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 52,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.94 targeting 172.16.0.249.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 50,
+      "Reason": "SMURF attack detected from 192.168.1.94 targeting 172.16.0.249.",
       "Steps": [
-        "Block source IP 192.168.1.94.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.94",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3135,17 +3589,20 @@
       "Session Time": 80,
       "Timestamp": "2026-03-24 7:25:54",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 67,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.107 targeting 172.16.0.76.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 44,
+      "Reason": "SMURF attack detected from 192.168.1.107 targeting 172.16.0.76.",
       "Steps": [
-        "Block source IP 192.168.1.107.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.107",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3157,17 +3614,20 @@
       "Session Time": 231,
       "Timestamp": "2026-03-13 4:56:53",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.242 targeting 172.16.0.48.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 42,
+      "Reason": "SMURF attack detected from 192.168.1.242 targeting 172.16.0.48.",
       "Steps": [
-        "Block source IP 192.168.1.242.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.242",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3179,9 +3639,12 @@
       "Session Time": 176,
       "Timestamp": "2026-03-19 20:32:9",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 67,
       "Reason": "Normal traffic between 192.168.1.140 and 172.16.0.190.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -3196,8 +3659,11 @@
       "Session Time": 53,
       "Timestamp": "2026-03-25 15:13:47",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
       "Risk": 76,
       "Reason": "Normal traffic between 192.168.1.104 and 172.16.0.122.",
       "Steps": [
@@ -3215,15 +3681,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 40,
       "Reason": "NEPTUNE attack detected from 192.168.1.99 targeting 172.16.0.53.",
       "Steps": [
-        "Block source IP 192.168.1.99.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.99",
+        "Restrict port 21",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -3235,17 +3704,20 @@
       "Session Time": 297,
       "Timestamp": "2026-03-16 9:10:33",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 69,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.4 targeting 172.16.0.215.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 55,
+      "Reason": "SMURF attack detected from 192.168.1.4 targeting 172.16.0.215.",
       "Steps": [
-        "Block source IP 192.168.1.4.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.4",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3257,17 +3729,20 @@
       "Session Time": 74,
       "Timestamp": "2026-03-13 7:13:19",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.94 targeting 172.16.0.193.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.94 targeting 172.16.0.193.",
       "Steps": [
-        "Block source IP 192.168.1.94.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.94",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3279,9 +3754,12 @@
       "Session Time": 216,
       "Timestamp": "2026-03-24 2:11:27",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 52,
       "Reason": "Normal traffic between 192.168.1.107 and 172.16.0.113.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -3296,17 +3774,20 @@
       "Session Time": 183,
       "Timestamp": "2026-03-1 19:12:43",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.13 targeting 172.16.0.182.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.13 targeting 172.16.0.182.",
       "Steps": [
-        "Block source IP 192.168.1.13.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.13",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3318,17 +3799,20 @@
       "Session Time": 292,
       "Timestamp": "2026-03-13 12:9:28",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.127 targeting 172.16.0.207.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 71,
+      "Reason": "SMURF attack detected from 192.168.1.127 targeting 172.16.0.207.",
       "Steps": [
-        "Block source IP 192.168.1.127.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.127",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3340,17 +3824,20 @@
       "Session Time": 300,
       "Timestamp": "2026-03-6 17:2:12",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.159 targeting 172.16.0.71.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 54,
+      "Reason": "SMURF attack detected from 192.168.1.159 targeting 172.16.0.71.",
       "Steps": [
-        "Block source IP 192.168.1.159.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.159",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3362,17 +3849,20 @@
       "Session Time": 18,
       "Timestamp": "2026-03-5 0:12:25",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.135 targeting 172.16.0.60.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 55,
+      "Reason": "SMURF attack detected from 192.168.1.135 targeting 172.16.0.60.",
       "Steps": [
-        "Block source IP 192.168.1.135.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.135",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3384,17 +3874,20 @@
       "Session Time": 259,
       "Timestamp": "2026-03-5 18:43:11",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 69,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.119 targeting 172.16.0.168.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 67,
+      "Reason": "SMURF attack detected from 192.168.1.119 targeting 172.16.0.168.",
       "Steps": [
-        "Block source IP 192.168.1.119.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.119",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3408,15 +3901,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 40,
       "Reason": "NEPTUNE attack detected from 192.168.1.168 targeting 172.16.0.8.",
       "Steps": [
-        "Block source IP 192.168.1.168.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.168",
+        "Restrict port 80",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -3428,17 +3924,20 @@
       "Session Time": 143,
       "Timestamp": "2026-03-5 12:22:4",
       "Status": "Attack",
-      "Attack Type": "neptune",
-      "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.231 targeting 172.16.0.156.",
+      "Attack Type": "guess_passwd",
+      "Category": "R2L",
+      "prediction": "Attack",
+      "attack_type": "guess_passwd",
+      "attack_category": "guess_passwd",
+      "Risk": 41,
+      "Reason": "GUESS_PASSWD attack detected from 192.168.1.231 targeting 172.16.0.156.",
       "Steps": [
-        "Block source IP 192.168.1.231.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.231",
+        "Restrict port 80",
+        "Enable account lockout policy",
+        "Enforce strong password rules",
+        "Enable multi-factor authentication",
+        "Monitor failed login attempts"
       ]
     },
     {
@@ -3450,17 +3949,20 @@
       "Session Time": 176,
       "Timestamp": "2026-03-5 16:47:4",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.77 targeting 172.16.0.63.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.77 targeting 172.16.0.63.",
       "Steps": [
-        "Block source IP 192.168.1.77.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.77",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3474,15 +3976,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 76,
       "Reason": "NEPTUNE attack detected from 192.168.1.207 targeting 172.16.0.171.",
       "Steps": [
-        "Block source IP 192.168.1.207.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.207",
+        "Restrict port 80",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -3494,17 +3999,20 @@
       "Session Time": 154,
       "Timestamp": "2026-03-19 14:5:47",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.32 targeting 172.16.0.132.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 53,
+      "Reason": "SMURF attack detected from 192.168.1.32 targeting 172.16.0.132.",
       "Steps": [
-        "Block source IP 192.168.1.32.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.32",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3518,15 +4026,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 81,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 77,
       "Reason": "NEPTUNE attack detected from 192.168.1.20 targeting 172.16.0.48.",
       "Steps": [
-        "Block source IP 192.168.1.20.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.20",
+        "Restrict port 21",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -3538,9 +4049,12 @@
       "Session Time": 75,
       "Timestamp": "2026-03-6 12:31:13",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 53,
       "Reason": "Normal traffic between 192.168.1.74 and 172.16.0.95.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -3555,17 +4069,20 @@
       "Session Time": 58,
       "Timestamp": "2026-03-21 9:26:21",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.150 targeting 172.16.0.117.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 44,
+      "Reason": "SMURF attack detected from 192.168.1.150 targeting 172.16.0.117.",
       "Steps": [
-        "Block source IP 192.168.1.150.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.150",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3577,9 +4094,12 @@
       "Session Time": 292,
       "Timestamp": "2026-03-3 14:46:7",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 72,
       "Reason": "Normal traffic between 192.168.1.191 and 172.16.0.56.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -3596,15 +4116,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 76,
       "Reason": "NEPTUNE attack detected from 192.168.1.110 targeting 172.16.0.40.",
       "Steps": [
-        "Block source IP 192.168.1.110.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.110",
+        "Restrict port 21",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -3616,17 +4139,20 @@
       "Session Time": 261,
       "Timestamp": "2026-03-4 19:19:38",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 69,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.137 targeting 172.16.0.230.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 53,
+      "Reason": "SMURF attack detected from 192.168.1.137 targeting 172.16.0.230.",
       "Steps": [
-        "Block source IP 192.168.1.137.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.137",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3638,17 +4164,20 @@
       "Session Time": 102,
       "Timestamp": "2026-03-20 18:31:11",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.105 targeting 172.16.0.157.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.105 targeting 172.16.0.157.",
       "Steps": [
-        "Block source IP 192.168.1.105.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.105",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3660,17 +4189,20 @@
       "Session Time": 206,
       "Timestamp": "2026-03-6 20:5:41",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.179 targeting 172.16.0.100.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.179 targeting 172.16.0.100.",
       "Steps": [
-        "Block source IP 192.168.1.179.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.179",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3682,9 +4214,12 @@
       "Session Time": 236,
       "Timestamp": "2026-03-12 4:35:22",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 66,
       "Reason": "Normal traffic between 192.168.1.204 and 172.16.0.2.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -3699,17 +4234,20 @@
       "Session Time": 55,
       "Timestamp": "2026-03-17 5:47:54",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.198 targeting 172.16.0.72.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 74,
+      "Reason": "SMURF attack detected from 192.168.1.198 targeting 172.16.0.72.",
       "Steps": [
-        "Block source IP 192.168.1.198.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.198",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3721,17 +4259,20 @@
       "Session Time": 219,
       "Timestamp": "2026-03-2 11:27:30",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 72,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.211 targeting 172.16.0.223.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.211 targeting 172.16.0.223.",
       "Steps": [
-        "Block source IP 192.168.1.211.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.211",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3743,9 +4284,12 @@
       "Session Time": 39,
       "Timestamp": "2026-03-27 19:39:32",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 51,
       "Reason": "Normal traffic between 192.168.1.23 and 172.16.0.173.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -3762,15 +4306,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 44,
       "Reason": "NEPTUNE attack detected from 192.168.1.169 targeting 172.16.0.164.",
       "Steps": [
-        "Block source IP 192.168.1.169.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.169",
+        "Restrict port 80",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -3782,17 +4329,20 @@
       "Session Time": 220,
       "Timestamp": "2026-03-27 5:47:13",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.7 targeting 172.16.0.252.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 55,
+      "Reason": "SMURF attack detected from 192.168.1.7 targeting 172.16.0.252.",
       "Steps": [
-        "Block source IP 192.168.1.7.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.7",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3804,17 +4354,20 @@
       "Session Time": 27,
       "Timestamp": "2026-03-26 2:21:30",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.192 targeting 172.16.0.237.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 69,
+      "Reason": "SMURF attack detected from 192.168.1.192 targeting 172.16.0.237.",
       "Steps": [
-        "Block source IP 192.168.1.192.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.192",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3826,17 +4379,20 @@
       "Session Time": 111,
       "Timestamp": "2026-03-27 7:15:31",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 67,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.144 targeting 172.16.0.28.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 40,
+      "Reason": "SMURF attack detected from 192.168.1.144 targeting 172.16.0.28.",
       "Steps": [
-        "Block source IP 192.168.1.144.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 80.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.144",
+        "Restrict port 80",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3848,17 +4404,20 @@
       "Session Time": 7,
       "Timestamp": "2026-03-26 3:18:25",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.82 targeting 172.16.0.193.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.82 targeting 172.16.0.193.",
       "Steps": [
-        "Block source IP 192.168.1.82.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 21.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.82",
+        "Restrict port 21",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3872,15 +4431,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 81,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.18 targeting 172.16.0.229.",
       "Steps": [
-        "Block source IP 192.168.1.18.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.18",
+        "Restrict port 53",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -3892,17 +4454,20 @@
       "Session Time": 127,
       "Timestamp": "2026-03-13 11:51:45",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.131 targeting 172.16.0.203.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.131 targeting 172.16.0.203.",
       "Steps": [
-        "Block source IP 192.168.1.131.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.131",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3916,15 +4481,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 40,
       "Reason": "NEPTUNE attack detected from 192.168.1.226 targeting 172.16.0.173.",
       "Steps": [
-        "Block source IP 192.168.1.226.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.226",
+        "Restrict port 53",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -3938,15 +4506,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.83 targeting 172.16.0.90.",
       "Steps": [
-        "Block source IP 192.168.1.83.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.83",
+        "Restrict port 53",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -3958,17 +4529,20 @@
       "Session Time": 74,
       "Timestamp": "2026-03-28 18:57:35",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.49 targeting 172.16.0.26.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.49 targeting 172.16.0.26.",
       "Steps": [
-        "Block source IP 192.168.1.49.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.49",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -3980,17 +4554,20 @@
       "Session Time": 148,
       "Timestamp": "2026-03-22 7:56:52",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 58,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.41 targeting 172.16.0.116.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.41 targeting 172.16.0.116.",
       "Steps": [
-        "Block source IP 192.168.1.41.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.41",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -4002,9 +4579,12 @@
       "Session Time": 286,
       "Timestamp": "2026-03-10 13:15:2",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 53,
       "Reason": "Normal traffic between 192.168.1.196 and 172.16.0.106.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -4019,17 +4599,20 @@
       "Session Time": 61,
       "Timestamp": "2026-03-18 15:51:43",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 68,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.206 targeting 172.16.0.97.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.206 targeting 172.16.0.97.",
       "Steps": [
-        "Block source IP 192.168.1.206.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.206",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -4041,17 +4624,20 @@
       "Session Time": 16,
       "Timestamp": "2026-03-19 9:3:55",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 82,
-      "Reason": "NEPTUNE attack detected from 192.168.1.193 targeting 172.16.0.134.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 45,
+      "Reason": "SMURF attack detected from 192.168.1.193 targeting 172.16.0.134.",
       "Steps": [
-        "Block source IP 192.168.1.193.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 22.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.193",
+        "Restrict port 22",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -4063,17 +4649,20 @@
       "Session Time": 180,
       "Timestamp": "2026-03-26 23:35:6",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 56,
-      "Reason": "NEPTUNE attack detected from 192.168.1.144 targeting 172.16.0.28.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 76,
+      "Reason": "SMURF attack detected from 192.168.1.144 targeting 172.16.0.28.",
       "Steps": [
-        "Block source IP 192.168.1.144.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.144",
+        "Restrict port 123",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -4085,9 +4674,12 @@
       "Session Time": 76,
       "Timestamp": "2026-03-16 23:24:55",
       "Status": "Normal",
-      "Attack Type": "",
+      "Attack Type": "normal",
       "Category": "Normal",
-      "Risk": 76,
+      "prediction": "Normal",
+      "attack_type": "normal",
+      "attack_category": "normal",
+      "Risk": 54,
       "Reason": "Normal traffic between 192.168.1.96 and 172.16.0.240.",
       "Steps": [
         "No action required. Continue monitoring."
@@ -4104,15 +4696,18 @@
       "Status": "Attack",
       "Attack Type": "neptune",
       "Category": "DoS",
-      "Risk": 82,
+      "prediction": "Attack",
+      "attack_type": "neptune",
+      "attack_category": "neptune",
+      "Risk": 75,
       "Reason": "NEPTUNE attack detected from 192.168.1.19 targeting 172.16.0.137.",
       "Steps": [
-        "Block source IP 192.168.1.19.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 123.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.19",
+        "Restrict port 123",
+        "Enable rate limiting",
+        "Configure firewall traffic filtering",
+        "Activate DDoS protection",
+        "Monitor network traffic spikes"
       ]
     },
     {
@@ -4124,17 +4719,20 @@
       "Session Time": 258,
       "Timestamp": "2026-03-3 13:14:2",
       "Status": "Attack",
-      "Attack Type": "guess_passwd",
-      "Category": "R2L",
-      "Risk": 72,
-      "Reason": "GUESS_PASSWD attack detected from 192.168.1.72 targeting 172.16.0.185.",
+      "Attack Type": "smurf",
+      "Category": "DoS",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 75,
+      "Reason": "SMURF attack detected from 192.168.1.72 targeting 172.16.0.185.",
       "Steps": [
-        "Block source IP 192.168.1.72.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.72",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     },
     {
@@ -4146,17 +4744,20 @@
       "Session Time": 77,
       "Timestamp": "2026-03-13 12:21:46",
       "Status": "Attack",
-      "Attack Type": "neptune",
+      "Attack Type": "smurf",
       "Category": "DoS",
-      "Risk": 57,
-      "Reason": "NEPTUNE attack detected from 192.168.1.201 targeting 172.16.0.83.",
+      "prediction": "Attack",
+      "attack_type": "smurf",
+      "attack_category": "smurf",
+      "Risk": 77,
+      "Reason": "SMURF attack detected from 192.168.1.201 targeting 172.16.0.83.",
       "Steps": [
-        "Block source IP 192.168.1.201.",
-        "Enable firewall filtering.",
-        "Monitor logs.",
-        "Enable IDS/IPS.",
-        "Restrict port 53.",
-        "Apply rate limiting."
+        "Block source IP 192.168.1.201",
+        "Restrict port 53",
+        "Disable ICMP broadcast",
+        "Enable anti-spoofing protection",
+        "Configure router filtering rules",
+        "Drop malformed ICMP packets"
       ]
     }
   ]

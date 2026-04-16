@@ -77,8 +77,8 @@ function Alerts() {
 
       <div className="glass-card table-card">
         <h3>Detected Traffic</h3>
-        <div className="table-wrap">
-          <table className="data-table">
+        <div className="table-container">
+          <table className="traffic-table">
             <thead>
               <tr>
                 <th>ID</th>

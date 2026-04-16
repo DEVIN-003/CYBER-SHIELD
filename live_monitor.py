@@ -51,27 +51,35 @@ def default_record():
 
 def collect_connections():
     records = []
-    net_io = psutil.net_io_counters()
-    sent = int(net_io.bytes_sent / 1024)
-    recv = int(net_io.bytes_recv / 1024)
-    conns = psutil.net_connections(kind="inet")
+    try:
+        net_io = psutil.net_io_counters()
+        sent = int(net_io.bytes_sent / 1024)
+        recv = int(net_io.bytes_recv / 1024)
+        conns = psutil.net_connections(kind="inet")
+    except (psutil.AccessDenied, PermissionError, OSError) as exc:
+        print(f"[LIVE] network stats limited (try Run as Administrator): {exc}")
+        records.append(default_record())
+        return records
 
     for conn in conns[:20]:
-        rec = default_record()
-        laddr = conn.laddr if conn.laddr else None
-        raddr = conn.raddr if conn.raddr else None
-        rec["source_ip"] = getattr(laddr, "ip", "127.0.0.1")
-        rec["source_port"] = getattr(laddr, "port", 0)
-        rec["destination_ip"] = getattr(raddr, "ip", "127.0.0.1")
-        rec["destination_port"] = getattr(raddr, "port", 0)
-        rec["protocol_type"] = infer_protocol(conn.type)
-        rec["service"] = map_service(rec["destination_port"])
-        rec["src_bytes"] = sent
-        rec["dst_bytes"] = recv
-        rec["count"] = len(conns)
-        rec["session_time"] = 2
-        rec["duration"] = 2
-        records.append(rec)
+        try:
+            rec = default_record()
+            laddr = conn.laddr if conn.laddr else None
+            raddr = conn.raddr if conn.raddr else None
+            rec["source_ip"] = getattr(laddr, "ip", "127.0.0.1")
+            rec["source_port"] = getattr(laddr, "port", 0)
+            rec["destination_ip"] = getattr(raddr, "ip", "127.0.0.1")
+            rec["destination_port"] = getattr(raddr, "port", 0)
+            rec["protocol_type"] = infer_protocol(conn.type)
+            rec["service"] = map_service(rec["destination_port"])
+            rec["src_bytes"] = sent
+            rec["dst_bytes"] = recv
+            rec["count"] = len(conns)
+            rec["session_time"] = 2
+            rec["duration"] = 2
+            records.append(rec)
+        except (psutil.AccessDenied, PermissionError, AttributeError, OSError):
+            continue
 
     if not records:
         records.append(default_record())
